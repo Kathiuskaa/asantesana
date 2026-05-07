@@ -67,7 +67,7 @@
 
     if (depth < maxDepth) {
       // More forks, alternating sides for bilateral organic feel
-      const forkCount = depth === 0 ? 3 + Math.floor(rng() * 2) : 1 + Math.floor(rng() * 2);
+      const forkCount = depth === 0 ? 2 + Math.floor(rng() * 2) : 1 + Math.floor(rng());
       for (let f = 0; f < forkCount; f++) {
         const forkZone = (f + 1) / (forkCount + 1);
         const forkAt = Math.floor(forkZone * segments * 0.85) + Math.floor(rng() * 2);
@@ -121,7 +121,7 @@
       const towardCenter = Math.atan2(cy - sy, w * 0.5) * 0.3;
       const dir = towardCenter + (rng() - 0.5) * 0.15;
       const delay = i * 0.012;
-      const maxDepth = 2 + Math.floor(rng() * 3);
+      const maxDepth = 1 + Math.floor(rng() * 2);
       const segLen = 14 + rng() * 8;
       const branches = buildBranch(-5, sy, dir, 0, maxDepth, segLen, rng, delay);
       roots.push(...branches);
@@ -135,7 +135,7 @@
       const sx = (w * 0.1) + (i / (topCount - 1)) * (w * 0.8);
       const dir = Math.PI / 2 + (rng() - 0.5) * 0.3; // nearly vertical downward
       const delay = rng() * 0.05;
-      const maxDepth = 2 + Math.floor(rng() * 2);
+      const maxDepth = 1 + Math.floor(rng());
       const segLen = 12 + rng() * 8;
       const branches = buildBranch(sx, -5, dir, 0, maxDepth, segLen, rng, delay);
       roots.push(...branches);
