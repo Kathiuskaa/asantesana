@@ -1,0 +1,8 @@
+{
+  "buildCommand": "",
+  "outputDirectory": ".",
+  "rewrites": [
+    { "source": "/", "destination": "/site/index.html" },
+    { "source": "/en", "destination": "/site/en.html" }
+  ]
+}
