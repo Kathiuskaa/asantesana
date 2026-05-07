@@ -1,8 +1,8 @@
 {
   "buildCommand": "",
   "outputDirectory": ".",
-  "rewrites": [
-    { "source": "/", "destination": "/site/index.html" },
-    { "source": "/en", "destination": "/site/en.html" }
+  "redirects": [
+    { "source": "/", "destination": "/site/index.html", "permanent": false },
+    { "source": "/en", "destination": "/site/en.html", "permanent": false }
   ]
 }
