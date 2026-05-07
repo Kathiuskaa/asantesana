@@ -1,19 +1,19 @@
 /* ========== FONTS ========== */
 @font-face {
   font-family: 'Quincy CF';
-  src: url('../04 FUENTES/Quincy CF Bold.ttf') format('truetype');
+  src: url('fonts/Quincy CF Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: 'Mont';
-  src: url('../04 FUENTES/Mont-SemiBold.otf') format('opentype');
+  src: url('fonts/Mont-SemiBold.otf') format('opentype');
   font-weight: 600;
   font-style: normal;
 }
 @font-face {
   font-family: 'Corporative Sans';
-  src: url('../04 FUENTES/CorporativeSansRegular.otf') format('opentype');
+  src: url('fonts/CorporativeSansRegular.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
 }
@@ -163,7 +163,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: rgba(245, 240, 232, 0.6);
-  padding: 0.3rem 0;
+  padding: 0.5rem 0.6rem;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
   transition: color 0.6s ease;
 }
 .nav.scrolled .nav__lang { color: var(--color-text-light); }
@@ -204,7 +207,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
   opacity: 0.08;
-  background-image: url('../03 TEXTURAS/paper10.jpg');
+  background-image: url('img/paper10.jpg');
   background-size: cover;
   background-position: center;
   pointer-events: none;
