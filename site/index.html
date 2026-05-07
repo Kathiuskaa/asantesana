@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asante Sana — Exploro · Comunico · Conecto</title>
+  <meta name="description" content="Asante Sana: Comunicación estratégica, gestión cultural y creación de collage. Acompaño artistas y agentes culturales en el diseño de narrativas que conectan.">
+  <meta name="author" content="Stefanía Ramírez G.">
+  <meta property="og:title" content="Asante Sana — Exploro · Comunico · Conecto">
+  <meta property="og:description" content="Comunicación estratégica, gestión cultural y creación artística. Narrativas que conectan.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <!-- ====== NAVIGATION ====== -->
+  <nav class="nav" id="nav">
+    <a href="#hero" class="nav__logo">
+      <img src="../01 LOGO/PNG/Logo AsanteSana-19.png" alt="Asante Sana">
+    </a>
+    <div class="nav__links" id="navLinks">
+      <a href="#soy" class="nav__link">Soy</a>
+      <a href="#servicios" class="nav__link">Servicios</a>
+      <a href="#testimonios" class="nav__link">Testimonios</a>
+      <a href="https://substack.com/@stefaniarg" target="_blank" class="nav__link">Blog</a>
+      <a href="#contacto" class="nav__cta">Contacto</a>
+      <a href="en.html" class="nav__lang">EN</a>
+    </div>
+    <div class="nav__hamburger" id="hamburger" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- ====== HERO ====== -->
+  <section class="hero" id="hero">
+    <div class="hero__texture"></div>
+    <canvas class="hero__canvas" id="heroCanvas"></canvas>
+    <img src="../01 LOGO/PNG/Logo AsanteSana-03.png" alt="Asante Sana" class="hero__logo">
+    <p class="hero__mission">
+      Comunicación, gestión cultural y creación artística al servicio de narrativas que conectan.
+    </p>
+    <div class="hero__scroll">
+      <span></span>
+    </div>
+  </section>
+
+
+  <!-- ====== SOY / ABOUT ====== -->
+  <section class="section" id="soy">
+    <div class="container">
+      <div class="about__grid">
+        <div class="about__image-wrap reveal">
+          <img src="stefania-portrait.jpg" alt="Stefanía Ramírez G.">
+          <div class="about__image-frame"></div>
+        </div>
+        <div class="about__content reveal">
+          <h1 class="section__title">Stefanía Ramírez G.</h1>
+          <p class="about__bio">
+            Comunicadora, gestora cultural y productora de contenidos. Mi trabajo se centra en construir narrativas que parten de lo real y conectan con quienes las reciben.
+          </p>
+          <p class="about__bio">
+            Acompaño a artistas y agentes culturales en el diseño de estrategias de comunicación que hacen visible su obra y la ponen en diálogo con sus públicos.
+          </p>
+          <p class="about__bio">
+            Mi práctica actual gira en torno al collage con papeles vegetales, la creación de libros de artista y la experiencia de ser mujer. Los viajes han ampliado mi perspectiva e integrado una visión más abierta y diversa del arte y sus posibilidades.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== SERVICIOS ====== -->
+  <section class="section section--alt" id="servicios">
+    <canvas id="leavesCanvas"></canvas>
+    <div class="container">
+      <div class="services__intro reveal">
+        <h2 class="section__title">Trabajemos juntas</h2>
+        <p class="section__text">
+          Creo contenidos que dan forma a tu proceso creativo y comunican tu historia.
+        </p>
+        <button class="services__modal-btn" id="openProcessModal" aria-label="Ver proceso creativo">
+          Ver proceso
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+        </button>
+      </div>
+
+      <div class="services__grid">
+        <!-- Arte y Creación -->
+        <div class="service-card reveal">
+          <img src="../02 ICONOGRAFIA/PNG/Iconografia-05.png" alt="Collage" class="service-card__icon">
+          <h3 class="service-card__title">Collage Personalizado</h3>
+          <p class="service-card__desc">
+            Piezas de collage realizadas con papel artesanal y materia vegetal —flores y hojas prensadas—. Cada trabajo es único, pensado para habitar un espacio con intención.
+          </p>
+          <div class="service-card__line"></div>
+        </div>
+
+        <div class="service-card reveal">
+          <img src="../02 ICONOGRAFIA/PNG/Iconografia-09.png" alt="Sesiones" class="service-card__icon">
+          <h3 class="service-card__title">Sesiones de Collage</h3>
+          <p class="service-card__desc">
+            Talleres adaptados a cada persona. A través de un proceso guiado, trabajamos creatividad y autoconocimiento. Mínimo 3 sesiones.
+          </p>
+          <div class="service-card__line"></div>
+        </div>
+
+        <div class="service-card reveal">
+          <img src="../02 ICONOGRAFIA/PNG/Iconografia-21.png" alt="Proceso creativo" class="service-card__icon">
+          <h3 class="service-card__title">Acompañamiento Creativo</h3>
+          <p class="service-card__desc">
+            Guía y sostén para recorrer las etapas del proceso creativo: Adentro · Afuera · Universo. Un espacio para conectar con tu expresión artística a tu ritmo.
+          </p>
+          <div class="service-card__line"></div>
+        </div>
+
+        <!-- Comunicación Estratégica -->
+        <div class="service-card reveal">
+          <img src="../02 ICONOGRAFIA/PNG/Iconografia-33.png" alt="Comunicación" class="service-card__icon">
+          <h3 class="service-card__title">Estrategias de Comunicación</h3>
+          <p class="service-card__desc">
+            Desarrollo de estrategias para artistas y agentes culturales. Trabajo la visibilidad y el alcance de proyectos artísticos y culturales.
+          </p>
+          <div class="service-card__line"></div>
+        </div>
+
+        <div class="service-card reveal">
+          <img src="../02 ICONOGRAFIA/PNG/Iconografia-29.png" alt="Acompañamiento" class="service-card__icon">
+          <h3 class="service-card__title">Asesoría en Comunicaciones</h3>
+          <p class="service-card__desc">
+            Sesiones individuales según necesidades puntuales. Plan de trabajo trimestral para una gestión integral. Cada palabra e imagen, con mirada editorial y curatorial.
+          </p>
+          <div class="service-card__line"></div>
+        </div>
+
+        <div class="service-card reveal">
+          <img src="../02 ICONOGRAFIA/PNG/Iconografia-25.png" alt="Conexión" class="service-card__icon">
+          <h3 class="service-card__title">Metodologías Creativas</h3>
+          <p class="service-card__desc">
+            Facilito procesos creativos y pedagógicos donde se aprende haciendo. Trabajo contigo para que tus ideas se articulen, se entiendan y lleguen a donde deben llegar.
+          </p>
+          <div class="service-card__line"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== MODAL PROCESO ====== -->
+  <div class="process-modal" id="processModal" aria-hidden="true">
+    <div class="process-modal__overlay" id="processModalOverlay"></div>
+    <div class="process-modal__content">
+      <button class="process-modal__close" id="closeProcessModal" aria-label="Cerrar">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <h3 class="process-modal__title">Proceso creativo</h3>
+      <p class="process-modal__text">
+        Cada proyecto comienza con la escucha. A partir de ahí, recorro un camino que integra investigación, exploración material y diálogo constante. Estas imágenes documentan parte de ese proceso.
+      </p>
+      <div class="process-modal__gallery">
+        <div class="process-modal__img-wrap">
+          <img src="modal-proceso-1.jpg" alt="Proceso creativo – Fundación Alejandro" loading="lazy">
+        </div>
+        <div class="process-modal__img-wrap">
+          <img src="modal-proceso-2.jpg" alt="Taller de collage" loading="lazy">
+        </div>
+        <div class="process-modal__img-wrap">
+          <img src="modal-proceso-3.jpg" alt="Materiales y texturas" loading="lazy">
+        </div>
+        <div class="process-modal__img-wrap">
+          <img src="modal-proceso-4.jpg" alt="Proceso de creación" loading="lazy">
+        </div>
+        <div class="process-modal__img-wrap">
+          <img src="modal-proceso-5.jpg" alt="Exploración artística" loading="lazy">
+        </div>
+        <div class="process-modal__img-wrap">
+          <img src="modal-proceso-6.jpg" alt="Detalle de obra" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== TESTIMONIOS ====== -->
+  <section class="section" id="testimonios">
+    <div class="container">
+      <h2 class="section__title reveal">Lo que dicen</h2>
+      <div class="testimonials__wrapper reveal">
+        <div class="testimonial active" data-index="0">
+          <p class="testimonial__quote">El acompañamiento de Stefanía me ayudó a encontrar mi voz como artista. Su mirada y visión estratégica cambiaron la manera en que comunico mi obra.</p>
+          <p class="testimonial__author">— Artista visual, Medellín</p>
+        </div>
+        <div class="testimonial" data-index="1">
+          <p class="testimonial__quote">Las sesiones de collage abrieron un espacio real de exploración. Cada encuentro fue una oportunidad para conectar con la creatividad desde otro lugar.</p>
+          <p class="testimonial__author">— Participante de taller, Bogotá</p>
+        </div>
+        <div class="testimonial" data-index="2">
+          <p class="testimonial__quote">Trabajar con Asante Sana me permitió ver mis proyectos culturales con más claridad. Las estrategias son concretas y funcionan.</p>
+          <p class="testimonial__author">— Gestora cultural, Colombia</p>
+        </div>
+      </div>
+      <div class="testimonials__dots">
+        <button class="testimonials__dot active" data-index="0" aria-label="Testimonio 1"></button>
+        <button class="testimonials__dot" data-index="1" aria-label="Testimonio 2"></button>
+        <button class="testimonials__dot" data-index="2" aria-label="Testimonio 3"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== PROYECTOS (Footer I) ====== -->
+  <section class="projects" id="proyectos">
+    <div class="container">
+      <h2 class="section__title reveal">Proyectos</h2>
+      <p class="projects__subtitle reveal">También hacen parte de mis creaciones</p>
+      <div class="projects__grid">
+        <a href="https://stefaniaramirezg.wixsite.com/medellindeidayvuelta" target="_blank" class="project-card reveal">
+          <img src="thumb-medellin.png" alt="Medellín de ida y vuelta" class="project-card__thumb">
+          <p class="project-card__year">2013</p>
+          <h3 class="project-card__title">Medellín de ida y vuelta</h3>
+          <p class="project-card__desc">Serie web con pódcasts, fotografías y textos sobre cada una de las comunas de Medellín, Colombia.</p>
+          <span class="project-card__link">Explorar</span>
+        </a>
+        <a href="https://stefaniaramirezg.wixsite.com/elmar" target="_blank" class="project-card reveal">
+          <img src="thumb-rincon.png" alt="Rincón del Mar" class="project-card__thumb">
+          <p class="project-card__year">2014</p>
+          <h3 class="project-card__title">Rincón del Mar</h3>
+          <p class="project-card__desc">Periodismo investigativo en el norte de Colombia. Rostros e historias desde el corazón de un pueblo costero.</p>
+          <span class="project-card__link">Explorar</span>
+        </a>
+        <a href="https://stefaniaramirezg.wixsite.com/inv-blogtrip-med" target="_blank" class="project-card reveal">
+          <img src="thumb-tesis.png" alt="Trabajo de Grado" class="project-card__thumb">
+          <p class="project-card__year">2016</p>
+          <h3 class="project-card__title">Trabajo de Grado</h3>
+          <p class="project-card__desc">Análisis del concepto transmedia aplicado a la producción de contenidos en la serie 3 travel bloggers.</p>
+          <span class="project-card__link">Explorar</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CONTACTO ====== -->
+  <section class="section" id="contacto">
+    <div class="container">
+      <h2 class="section__title reveal">Hablemos</h2>
+      <p class="section__text reveal">
+        Si quieres saber más o tienes un proyecto en mente, escríbeme.
+      </p>
+      <div class="contact__grid">
+        <div class="reveal">
+          <form class="contact__form" id="contactForm">
+            <input type="text" class="contact__input" placeholder="Tu nombre" required id="contactName">
+            <input type="email" class="contact__input" placeholder="Tu correo electrónico" required id="contactEmail">
+            <textarea class="contact__textarea" placeholder="Tu mensaje..." required id="contactMessage"></textarea>
+            <button type="submit" class="contact__submit" id="contactSubmit">Enviar mensaje</button>
+          </form>
+        </div>
+        <div class="contact__info reveal">
+          <div class="contact__info-item">
+            <svg class="contact__info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            <a href="mailto:hola@asantesana.co">hola@asantesana.co</a>
+          </div>
+          <div class="contact__info-item">
+            <svg class="contact__info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <a href="https://wa.me/573138701891" target="_blank">+57 313 870 1891</a>
+          </div>
+          <div class="contact__info-item">
+            <svg class="contact__info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Medellín, Colombia</span>
+          </div>
+          <div class="contact__socials">
+            <a href="https://www.instagram.com/hola_asante_sana/" target="_blank" class="contact__social" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+            <a href="https://www.linkedin.com/in/stefaniarg/" target="_blank" class="contact__social" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            <a href="https://wa.me/573138701891" target="_blank" class="contact__social" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+            <a href="https://substack.com/@stefaniarg" target="_blank" class="contact__social" aria-label="Substack Blog"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer">
+    <p class="footer__copy">© 2026 <span class="footer__brand">Asante Sana</span></p>
+    <p class="footer__credit">Web por <a href="https://kathiuska.com" target="_blank">Kathiuska Studio</a></p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
