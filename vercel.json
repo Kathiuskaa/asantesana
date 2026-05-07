@@ -1,8 +1,1 @@
-{
-  "buildCommand": "",
-  "outputDirectory": ".",
-  "redirects": [
-    { "source": "/", "destination": "/site/index.html", "permanent": false },
-    { "source": "/en", "destination": "/site/en.html", "permanent": false }
-  ]
-}
+{}
