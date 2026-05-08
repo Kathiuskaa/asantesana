@@ -171,6 +171,22 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .nav.scrolled .nav__lang { color: var(--color-text-light); }
 .nav__lang:hover { color: var(--color-terracotta); }
+.nav__socials {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  margin-left: 0.5rem;
+  padding-left: 1.2rem;
+  border-left: 1px solid rgba(245, 240, 232, 0.2);
+}
+.nav.scrolled .nav__socials { border-left-color: rgba(61, 74, 42, 0.15); }
+.nav__socials a {
+  color: var(--color-cream);
+  opacity: 0.6;
+  transition: opacity 0.3s ease, color 0.6s ease;
+}
+.nav__socials a:hover { opacity: 1; }
+.nav.scrolled .nav__socials a { color: var(--color-olive); }
 /* Mobile menu */
 .nav__hamburger {
   display: none;
