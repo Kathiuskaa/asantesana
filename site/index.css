@@ -856,6 +856,33 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   color: var(--color-olive);
   opacity: 1;
 }
+.footer__message {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--color-terracotta);
+  opacity: 0.6;
+  max-width: 480px;
+  text-align: center;
+}
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  align-items: center;
+}
+.footer__doc-link {
+  font-family: var(--font-detail);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: var(--color-olive);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: var(--transition);
+}
+.footer__doc-link:hover {
+  border-bottom-color: var(--color-olive);
+}
 
 /* ========== PROCESS MODAL ========== */
 .process-modal {
