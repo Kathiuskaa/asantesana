@@ -494,25 +494,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 /* ========== CONTACT FORM ========== */
 const contactForm = document.getElementById('contactForm');
-contactForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const name = document.getElementById('contactName').value;
-  const email = document.getElementById('contactEmail').value;
-  const message = document.getElementById('contactMessage').value;
-  
-  // Open email client with form data
-  const mailtoLink = `mailto:hola@asantesana.co?subject=Contacto desde web - ${encodeURIComponent(name)}&body=${encodeURIComponent(`Nombre: ${name}\nEmail: ${email}\n\n${message}`)}`;
-  window.location.href = mailtoLink;
-  
-  const btn = document.getElementById('contactSubmit');
-  btn.textContent = '¡Mensaje enviado!';
-  btn.style.background = '#C8703A';
-  setTimeout(() => {
-    btn.textContent = 'Enviar mensaje';
-    btn.style.background = '';
-    contactForm.reset();
-  }, 3000);
-});
+if (contactForm) {
+  contactForm.addEventListener('submit', () => {
+    const btn = document.getElementById('contactSubmit');
+    btn.textContent = 'Enviando...';
+    btn.style.opacity = '0.6';
+  });
+}
 
 /* ========== PARALLAX SUBTLE HERO ========== */
 window.addEventListener('scroll', () => {

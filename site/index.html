@@ -129,10 +129,14 @@
       <p class="section__text reveal">Si quieres saber más o tienes un proyecto en mente, escríbeme.</p>
       <div class="contact__grid">
         <div class="reveal">
-          <form class="contact__form" id="contactForm">
-            <input type="text" class="contact__input" placeholder="Tu nombre" required id="contactName">
-            <input type="email" class="contact__input" placeholder="Tu correo electrónico" required id="contactEmail">
-            <textarea class="contact__textarea" placeholder="Tu mensaje..." required id="contactMessage"></textarea>
+          <form class="contact__form" id="contactForm" action="https://formsubmit.co/stefaniaramirezgutierrez@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="Nuevo mensaje desde Asante Sana Web">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://asantesana.vercel.app/site/index.html#contacto">
+            <input type="hidden" name="_template" value="table">
+            <input type="text" name="name" class="contact__input" placeholder="Tu nombre" required id="contactName">
+            <input type="email" name="email" class="contact__input" placeholder="Tu correo electrónico" required id="contactEmail">
+            <textarea name="message" class="contact__textarea" placeholder="Tu mensaje..." required id="contactMessage"></textarea>
             <button type="submit" class="contact__submit" id="contactSubmit">Enviar mensaje</button>
           </form>
         </div>
