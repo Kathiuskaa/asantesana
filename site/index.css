@@ -394,7 +394,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   object-position: center 20%;
   transition: var(--transition-slow);
 }
-.about__image-wrap:hover img { transform: scale(1.03); }
+.about__image-wrap:hover img { transform: none; }
 .about__image-frame {
   position: absolute;
   top: -12px; left: -12px; right: -12px; bottom: -12px;
