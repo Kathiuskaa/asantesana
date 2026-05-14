@@ -379,11 +379,11 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   display: grid;
   grid-template-columns: 0.75fr 1fr;
   gap: 3rem;
-  align-items: start;
+  align-items: end;
 }
 .about__image-wrap {
   position: relative;
-  border-radius: 50% 50% 8px 8px / 38% 38% 8px 8px;
+  border-radius: 12px;
   overflow: hidden;
   aspect-ratio: 3/4;
 }
@@ -399,7 +399,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   position: absolute;
   top: -12px; left: -12px; right: -12px; bottom: -12px;
   border: 1.5px solid var(--color-terracotta-light);
-  border-radius: 50% 50% 12px 12px / 38% 38% 12px 12px;
+  border-radius: 16px;
   opacity: 0.35;
   pointer-events: none;
   transition: opacity var(--transition);
