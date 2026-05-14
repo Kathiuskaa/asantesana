@@ -377,9 +377,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .about__grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 5rem;
-  align-items: center;
+  grid-template-columns: 0.75fr 1fr;
+  gap: 3rem;
+  align-items: start;
 }
 .about__image-wrap {
   position: relative;
@@ -407,18 +407,19 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .about__image-wrap:hover .about__image-frame {
   opacity: 0.6;
 }
-.about__content { padding: 2rem 0; }
+.about__content { padding: 0; }
 .about__bio {
   font-family: var(--font-detail);
-  font-size: 1.1rem;
-  line-height: 2;
+  font-size: 0.95rem;
+  line-height: 1.75;
   color: var(--color-text-light);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   text-align: justify;
   text-wrap: pretty;
   hyphens: auto;
   -webkit-hyphens: auto;
 }
+.about__bio:last-child { margin-bottom: 0; }
 
 /* ========== SERVICES ========== */
 #servicios {
