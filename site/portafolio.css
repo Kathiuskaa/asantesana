@@ -4,15 +4,21 @@
   overflow-x: hidden;
 }
 
-/* Nav on hero: olive bg, cream text */
+/* Nav on hero: olive bg, cream text, white line */
 .pf-nav--hero {
   background: var(--color-olive) !important;
   box-shadow: none !important;
+  border-bottom: 1px solid rgba(245,240,232,0.25) !important;
 }
 .pf-nav--hero .nav__link,
 .pf-nav--hero .nav__lang { color: var(--color-cream) !important; }
 .pf-nav--hero .nav__logo img {
   filter: brightness(0) invert(1) sepia(0.12) saturate(0.6) !important;
+}
+
+/* Nav on carousel: cream bg, terracotta line */
+.pf-body .nav.scrolled {
+  border-bottom: 1px solid var(--color-terracotta);
 }
 
 /* HERO — full-screen vertical section */
