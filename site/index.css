@@ -1210,10 +1210,74 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .services__grid { grid-template-columns: 1fr; }
   .projects__grid { grid-template-columns: 1fr 1fr; }
   #testimonios { padding: 5rem 1.5rem; }
+  .proyectos__grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 600px) {
   .hero__logo { width: min(300px, 70vw); }
   .icon-strip { gap: 1.5rem; }
   .icon-strip img { height: 30px; }
   .projects__grid { grid-template-columns: 1fr; }
+}
+
+/* ========== OTROS PROYECTOS ========== */
+.proyectos {
+  padding: 5rem 2rem;
+  background: var(--color-cream);
+}
+.proyectos__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+.proyecto-card {
+  text-decoration: none;
+  color: inherit;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(61,74,42,0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.proyecto-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(61,74,42,0.12);
+}
+.proyecto-card__img {
+  height: 180px;
+  overflow: hidden;
+}
+.proyecto-card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.proyecto-card:hover .proyecto-card__img img {
+  transform: scale(1.05);
+}
+.proyecto-card__text {
+  padding: 1.2rem 1.4rem;
+}
+.proyecto-card__title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-olive);
+  margin-bottom: 0.4rem;
+}
+.proyecto-card__desc {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  line-height: 1.55;
+  color: var(--color-text-light);
+  margin-bottom: 0.6rem;
+}
+.proyecto-card__year {
+  font-family: var(--font-detail);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-terracotta);
+  opacity: 0.8;
 }

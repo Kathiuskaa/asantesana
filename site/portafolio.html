@@ -198,6 +198,19 @@
     document.querySelector('.pf-hero__scroll').addEventListener('click', () => {
       scroller.scrollIntoView({ behavior: 'smooth' });
     });
+
+    // Nav color: olive on hero, cream on carousel
+    const nav = document.getElementById('nav');
+    const obs = new IntersectionObserver(([e]) => {
+      if(e.isIntersecting) {
+        nav.classList.remove('scrolled');
+        nav.classList.add('pf-nav--hero');
+      } else {
+        nav.classList.remove('pf-nav--hero');
+        nav.classList.add('scrolled');
+      }
+    }, { threshold: 0.3 });
+    obs.observe(hero);
   </script>
 </body>
 </html>

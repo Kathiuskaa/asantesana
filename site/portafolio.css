@@ -4,6 +4,17 @@
   overflow-x: hidden;
 }
 
+/* Nav on hero: olive bg, cream text */
+.pf-nav--hero {
+  background: var(--color-olive) !important;
+  box-shadow: none !important;
+}
+.pf-nav--hero .nav__link,
+.pf-nav--hero .nav__lang { color: var(--color-cream) !important; }
+.pf-nav--hero .nav__logo img {
+  filter: brightness(0) invert(1) sepia(0.12) saturate(0.6) !important;
+}
+
 /* HERO — full-screen vertical section */
 .pf-hero {
   height: 100vh;
