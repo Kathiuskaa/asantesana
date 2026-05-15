@@ -7,6 +7,7 @@
 /* HERO — full-screen vertical section */
 .pf-hero {
   height: 100vh;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -42,7 +43,10 @@
   opacity: 0.7;
 }
 .pf-hero__scroll {
-  margin-top: 2.5rem;
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
   font-size: 1.8rem;
   color: var(--color-cream);
   cursor: pointer;
