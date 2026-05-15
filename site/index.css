@@ -415,10 +415,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   line-height: 1.8;
   color: var(--color-text-light);
   margin-bottom: 1.2rem;
-  text-align: justify;
   text-wrap: pretty;
-  hyphens: auto;
-  -webkit-hyphens: auto;
+  hyphens: none;
+  -webkit-hyphens: none;
 }
 .about__bio:last-of-type { margin-bottom: 2rem; }
 .about__portfolio {
