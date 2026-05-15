@@ -201,7 +201,7 @@
         const segOpacity = root.opacity * fadeIn * (1 - t * 0.3);
 
         // Subtle sway: increases toward tips
-        const swayAmt = growDone ? Math.sin(elapsed * 0.8 + i * 0.3 + root.delay * 20) * t * 5 : 0;
+        const swayAmt = growDone ? Math.sin(elapsed * 0.8 + i * 0.3 + root.delay * 20) * t * 8 : 0;
         const swayX = Math.cos(elapsed * 0.5 + i * 0.5) * swayAmt;
         const swayY = Math.sin(elapsed * 0.6 + i * 0.4) * swayAmt * 0.6;
 
@@ -214,7 +214,7 @@
           const prev = pts[i - 2];
           const curr = pts[i - 1];
           const next = pts[i];
-          const prevSway = growDone ? Math.sin(elapsed * 0.8 + (i-1) * 0.3 + root.delay * 20) * ((i-1)/total) * 2.5 : 0;
+          const prevSway = growDone ? Math.sin(elapsed * 0.8 + (i-1) * 0.3 + root.delay * 20) * ((i-1)/total) * 8 : 0;
           const prevSwayX = Math.cos(elapsed * 0.5 + (i-1) * 0.5) * prevSway;
           const prevSwayY = Math.sin(elapsed * 0.6 + (i-1) * 0.4) * prevSway * 0.6;
           const mx = (curr.x + prevSwayX + next.x + swayX) / 2;
@@ -235,9 +235,10 @@
         const leafSize = 3 + root.thickness * 1.2;
         const leafAlpha = root.opacity * fadeIn * Math.min(1, (progress - 0.85) / 0.15);
 
+        const leafSway = growDone ? Math.sin(elapsed * 1.2 + root.delay * 30) * 0.25 : 0;
         ctx.save();
-        ctx.translate(tip.x, tip.y);
-        ctx.rotate(tipAngle);
+        ctx.translate(tip.x + (growDone ? Math.sin(elapsed * 0.8 + root.delay * 20) * 4 : 0), tip.y + (growDone ? Math.cos(elapsed * 0.6 + root.delay * 15) * 2.5 : 0));
+        ctx.rotate(tipAngle + leafSway);
 
         // Teardrop leaf shape
         ctx.beginPath();

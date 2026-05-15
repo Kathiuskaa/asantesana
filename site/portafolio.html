@@ -25,226 +25,161 @@
     <div class="nav__hamburger" id="hamburger" aria-label="Abrir menú"><span></span><span></span><span></span></div>
   </nav>
 
-  <!-- CAROUSEL -->
-  <main class="pf-carousel" id="pfCarousel">
+  <!-- HERO -->
+  <header class="pf-hero">
+    <p class="pf-hero__eyebrow">Práctica creativa</p>
+    <h1 class="pf-hero__title">Papel, collage<br>y memoria</h1>
+    <p class="pf-hero__desc">Mi práctica explora cómo los objetos editoriales pueden convertirse en espacios donde las historias personales encuentran forma, archivo y memoria íntima y también colectiva.</p>
+    <div class="pf-hero__scroll">↓</div>
+  </header>
 
-    <!-- SLIDE 0: INTRO -->
-    <section class="pf-slide pf-slide--intro active" data-slide="0">
-      <div class="pf-slide__text-full">
-        <p class="pf-slide__eyebrow">Práctica creativa</p>
-        <h1 class="pf-slide__hero-title">Papel, collage<br>y memoria</h1>
-        <p class="pf-slide__hero-desc">Mi práctica explora cómo los objetos editoriales pueden convertirse en espacios donde las historias personales encuentran forma, archivo y memoria íntima y también colectiva.</p>
-        <button class="pf-slide__start" onclick="goSlide(1)">Explorar ↓</button>
-      </div>
-    </section>
+  <main class="pf-main">
 
-    <!-- SLIDE 1: LA PLAZA, LA CASA Y EL RÍO -->
-    <section class="pf-slide" data-slide="1">
-      <div class="pf-slide__images">
-        <img src="img/portafolio/p04_1.jpg" alt="Residencia Mompox" class="pf-slide__img active" data-img="0">
-        <img src="img/portafolio/p04_2.jpg" alt="Residencia Mompox" class="pf-slide__img" data-img="1">
-        <img src="img/portafolio/p04_3.jpg" alt="Residencia Mompox" class="pf-slide__img" data-img="2">
-        <img src="img/portafolio/p04_4.jpg" alt="Residencia Mompox" class="pf-slide__img" data-img="3">
-        <img src="img/portafolio/p04_5.jpg" alt="Residencia Mompox" class="pf-slide__img" data-img="4">
-        <img src="img/portafolio/p04_6.jpg" alt="Residencia Mompox" class="pf-slide__img" data-img="5">
-        <div class="pf-slide__img-nav">
-          <button class="pf-img-dot active" onclick="goImg(this,0)"></button>
-          <button class="pf-img-dot" onclick="goImg(this,1)"></button>
-          <button class="pf-img-dot" onclick="goImg(this,2)"></button>
-          <button class="pf-img-dot" onclick="goImg(this,3)"></button>
-          <button class="pf-img-dot" onclick="goImg(this,4)"></button>
-          <button class="pf-img-dot" onclick="goImg(this,5)"></button>
+    <!-- 1: LA PLAZA -->
+    <section class="pf-project">
+      <div class="pf-project__images">
+        <div class="pf-project__track">
+          <img src="img/portafolio/p04_1.jpg" alt="Residencia Mompox" loading="lazy">
+          <img src="img/portafolio/p04_2.jpg" alt="Residencia Mompox" loading="lazy">
+          <img src="img/portafolio/p04_3.jpg" alt="Residencia Mompox" loading="lazy">
+          <img src="img/portafolio/p04_4.jpg" alt="Residencia Mompox" loading="lazy">
+          <img src="img/portafolio/p04_5.jpg" alt="Residencia Mompox" loading="lazy">
+          <img src="img/portafolio/p04_6.jpg" alt="Residencia Mompox" loading="lazy">
         </div>
       </div>
-      <div class="pf-slide__text">
-        <p class="pf-slide__eyebrow">Residencia artística · Mompox · 2024</p>
-        <h2 class="pf-slide__title">La plaza, la casa y el río</h2>
-        <p class="pf-slide__desc">Mujeres momposinas: sus voces, relatos y genealogías narrativas. Desarrollada con mujeres narradoras del territorio momposino. Laboratorios de memorias, experimentación plástica y creación de un oráculo de historias.</p>
-        <p class="pf-slide__meta">Participación: 9 mujeres · Taller El Boga</p>
+      <div class="pf-project__text">
+        <p class="pf-project__eyebrow">Residencia artística · Mompox · Feb–Mar 2024</p>
+        <h2 class="pf-project__title">La plaza, la casa y el río</h2>
+        <p class="pf-project__desc">Mujeres momposinas: sus voces, relatos y genealogías narrativas. Laboratorios de memorias, experimentación plástica y creación de un oráculo de historias con mujeres narradoras del territorio.</p>
+        <p class="pf-project__meta">9 mujeres · Taller El Boga</p>
       </div>
     </section>
 
-    <!-- SLIDE 2: PAPEL BLANCO -->
-    <section class="pf-slide" data-slide="2">
-      <div class="pf-slide__images">
-        <img src="img/portafolio/p06_1.jpg" alt="Papel Blanco" class="pf-slide__img active" data-img="0">
-        <img src="img/portafolio/p06_2.jpg" alt="Papel Blanco" class="pf-slide__img" data-img="1">
-        <img src="img/portafolio/p06_3.jpg" alt="Papel Blanco" class="pf-slide__img" data-img="2">
-        <img src="img/portafolio/p06_4.jpg" alt="Papel Blanco" class="pf-slide__img" data-img="3">
-        <img src="img/portafolio/p06_5.jpg" alt="Papel Blanco" class="pf-slide__img" data-img="4">
-        <div class="pf-slide__img-nav">
-          <button class="pf-img-dot active" onclick="goImg(this,0)"></button>
-          <button class="pf-img-dot" onclick="goImg(this,1)"></button>
-          <button class="pf-img-dot" onclick="goImg(this,2)"></button>
-          <button class="pf-img-dot" onclick="goImg(this,3)"></button>
-          <button class="pf-img-dot" onclick="goImg(this,4)"></button>
+    <!-- 2: PAPEL BLANCO -->
+    <section class="pf-project pf-project--reverse">
+      <div class="pf-project__images">
+        <div class="pf-project__track">
+          <img src="img/portafolio/p06_1.jpg" alt="Papel Blanco" loading="lazy">
+          <img src="img/portafolio/p06_2.jpg" alt="Papel Blanco" loading="lazy">
+          <img src="img/portafolio/p06_3.jpg" alt="Papel Blanco" loading="lazy">
+          <img src="img/portafolio/p06_4.jpg" alt="Papel Blanco" loading="lazy">
+          <img src="img/portafolio/p06_5.jpg" alt="Papel Blanco" loading="lazy">
         </div>
       </div>
-      <div class="pf-slide__text">
-        <p class="pf-slide__eyebrow">Exposición colectiva · Kampala, Uganda · 2023</p>
-        <h2 class="pf-slide__title">Papel Blanco</h2>
-        <p class="pf-slide__desc">Primera exposición pública de una serie de poemas y collages. Look One – Edición 3, Xenson Art Space. Integración de dos pasiones: crear y gestionar la publicación de arte y creatividad. La serie surgió como un ejercicio de introspección y exploración creativa.</p>
+      <div class="pf-project__text">
+        <p class="pf-project__eyebrow">Exposición · Xenson Art Space · Kampala, Uganda · 2023</p>
+        <h2 class="pf-project__title">Papel Blanco</h2>
+        <p class="pf-project__desc">Primera exposición pública de poemas y collages. Look One – Edición 3. Integración de crear y gestionar la publicación de arte. La serie surgió como un ejercicio de introspección a través del collage y la escritura.</p>
       </div>
     </section>
 
-    <!-- SLIDE 3: LO QUE NO CONTARON MIS ABUELAS -->
-    <section class="pf-slide" data-slide="3">
-      <div class="pf-slide__images">
-        <img src="img/portafolio/p08_1.jpg" alt="Taller de silencios" class="pf-slide__img active" data-img="0">
-        <img src="img/portafolio/p08_2.jpg" alt="Taller de silencios" class="pf-slide__img" data-img="1">
-        <img src="img/portafolio/p08_3.jpg" alt="Taller de silencios" class="pf-slide__img" data-img="2">
-        <div class="pf-slide__img-nav">
-          <button class="pf-img-dot active" onclick="goImg(this,0)"></button>
-          <button class="pf-img-dot" onclick="goImg(this,1)"></button>
-          <button class="pf-img-dot" onclick="goImg(this,2)"></button>
+    <!-- 3: LO QUE NO CONTARON MIS ABUELAS -->
+    <section class="pf-project">
+      <div class="pf-project__images">
+        <div class="pf-project__track">
+          <img src="img/portafolio/p08_1.jpg" alt="Taller de silencios" loading="lazy">
+          <img src="img/portafolio/p08_2.jpg" alt="Taller de silencios" loading="lazy">
+          <img src="img/portafolio/p08_3.jpg" alt="Taller de silencios" loading="lazy">
         </div>
       </div>
-      <div class="pf-slide__text">
-        <p class="pf-slide__eyebrow">Taller · Medellín · Nov 2024</p>
-        <h2 class="pf-slide__title">Lo que no contaron mis abuelas</h2>
-        <p class="pf-slide__desc">Diseño de metodología y creación de libretas para el taller de cancionero íntimo con la cantautora Alicia y la Marea. Cuatro sesiones con círculos de palabra, escritura y creación con un grupo de mujeres afro.</p>
-        <p class="pf-slide__meta">Participación: 9 mujeres</p>
+      <div class="pf-project__text">
+        <p class="pf-project__eyebrow">Taller · Medellín · Nov 2024</p>
+        <h2 class="pf-project__title">Lo que no contaron mis abuelas</h2>
+        <p class="pf-project__desc">Diseño de metodología y creación de libretas para el cancionero íntimo con la cantautora Alicia y la Marea. Círculos de palabra, escritura y creación con mujeres afro.</p>
+        <p class="pf-project__meta">9 mujeres</p>
       </div>
     </section>
 
-    <!-- SLIDE 4: LIBRO DE ARTISTA -->
-    <section class="pf-slide" data-slide="4">
-      <div class="pf-slide__images">
-        <img src="img/portafolio/p09_1.jpg" alt="Libro de artista" class="pf-slide__img active" data-img="0">
-        <img src="img/portafolio/p09_2.jpg" alt="Libro de artista" class="pf-slide__img" data-img="1">
-        <img src="img/portafolio/p09_3.jpg" alt="Libro de artista" class="pf-slide__img" data-img="2">
-        <div class="pf-slide__img-nav">
-          <button class="pf-img-dot active" onclick="goImg(this,0)"></button>
-          <button class="pf-img-dot" onclick="goImg(this,1)"></button>
-          <button class="pf-img-dot" onclick="goImg(this,2)"></button>
+    <!-- 4: LIBRO DE ARTISTA -->
+    <section class="pf-project pf-project--reverse">
+      <div class="pf-project__images">
+        <div class="pf-project__track">
+          <img src="img/portafolio/p09_1.jpg" alt="Libro de artista" loading="lazy">
+          <img src="img/portafolio/p09_2.jpg" alt="Libro de artista" loading="lazy">
+          <img src="img/portafolio/p09_3.jpg" alt="Libro de artista" loading="lazy">
         </div>
       </div>
-      <div class="pf-slide__text">
-        <p class="pf-slide__eyebrow">Taller La Estampa · Medellín · Sep–Dic 2024</p>
-        <h2 class="pf-slide__title">Libro de artista</h2>
-        <p class="pf-slide__desc">Taller de 3 módulos: conceptos básicos sobre el libro de artista, técnicas de plegado de papel, encuadernación e intervención y reproducción de imágenes. Abanico, fanzine desplegable, cuaderno australiano.</p>
+      <div class="pf-project__text">
+        <p class="pf-project__eyebrow">Taller La Estampa · Medellín · Sep–Dic 2024</p>
+        <h2 class="pf-project__title">Libro de artista</h2>
+        <p class="pf-project__desc">Conceptos básicos sobre el libro de artista, técnicas de plegado, encuadernación e intervención de imágenes. Abanico, fanzine desplegable, cuaderno australiano.</p>
       </div>
     </section>
 
-    <!-- SLIDE 5: DE LA HABITACIÓN PROPIA AL JARDÍN -->
-    <section class="pf-slide" data-slide="5">
-      <div class="pf-slide__images">
-        <img src="img/portafolio/p11_1.jpg" alt="De la habitación propia al jardín" class="pf-slide__img active" data-img="0">
-        <img src="img/portafolio/p11_2.jpg" alt="De la habitación propia al jardín" class="pf-slide__img" data-img="1">
-        <img src="img/portafolio/p11_3.jpg" alt="De la habitación propia al jardín" class="pf-slide__img" data-img="2">
-        <img src="img/portafolio/p11_4.jpg" alt="De la habitación propia al jardín" class="pf-slide__img" data-img="3">
-        <img src="img/portafolio/p11_5.jpg" alt="De la habitación propia al jardín" class="pf-slide__img" data-img="4">
-        <div class="pf-slide__img-nav">
-          <button class="pf-img-dot active" onclick="goImg(this,0)"></button>
-          <button class="pf-img-dot" onclick="goImg(this,1)"></button>
-          <button class="pf-img-dot" onclick="goImg(this,2)"></button>
-          <button class="pf-img-dot" onclick="goImg(this,3)"></button>
-          <button class="pf-img-dot" onclick="goImg(this,4)"></button>
+    <!-- 5: DE LA HABITACIÓN PROPIA AL JARDÍN -->
+    <section class="pf-project">
+      <div class="pf-project__images">
+        <div class="pf-project__track">
+          <img src="img/portafolio/p11_1.jpg" alt="De la habitación propia al jardín" loading="lazy">
+          <img src="img/portafolio/p11_2.jpg" alt="De la habitación propia al jardín" loading="lazy">
+          <img src="img/portafolio/p11_3.jpg" alt="De la habitación propia al jardín" loading="lazy">
+          <img src="img/portafolio/p11_4.jpg" alt="De la habitación propia al jardín" loading="lazy">
+          <img src="img/portafolio/p11_5.jpg" alt="De la habitación propia al jardín" loading="lazy">
         </div>
       </div>
-      <div class="pf-slide__text">
-        <p class="pf-slide__eyebrow">Serie de 20 collages · Sep–Dic 2024</p>
-        <h2 class="pf-slide__title">De la habitación propia al jardín</h2>
-        <p class="pf-slide__desc">Papel reciclado y fibras vegetales. La vuelta al territorio después de un exilio voluntario sacudió las certezas de mi existencia. Elaborar papel con mis manos y embellecerlo con materia orgánica fue un ejercicio de autoexploración y reconexión.</p>
+      <div class="pf-project__text">
+        <p class="pf-project__eyebrow">Serie de 20 collages · Sep–Dic 2024</p>
+        <h2 class="pf-project__title">De la habitación propia al jardín</h2>
+        <p class="pf-project__desc">Papel reciclado y fibras vegetales. La vuelta al territorio después de un exilio voluntario. Elaborar papel con mis manos y embellecerlo con materia orgánica fue un ejercicio de autoexploración y reconexión.</p>
       </div>
     </section>
 
-    <!-- SLIDE 6: ENCUADERNACIÓN -->
-    <section class="pf-slide" data-slide="6">
-      <div class="pf-slide__images">
-        <img src="img/portafolio/p13_1.jpg" alt="Encuadernación" class="pf-slide__img active" data-img="0">
-        <img src="img/portafolio/p13_2.jpg" alt="Encuadernación" class="pf-slide__img" data-img="1">
-        <img src="img/portafolio/p13_3.jpg" alt="Encuadernación" class="pf-slide__img" data-img="2">
-        <div class="pf-slide__img-nav">
-          <button class="pf-img-dot active" onclick="goImg(this,0)"></button>
-          <button class="pf-img-dot" onclick="goImg(this,1)"></button>
-          <button class="pf-img-dot" onclick="goImg(this,2)"></button>
+    <!-- 6: ENCUADERNACIÓN -->
+    <section class="pf-project pf-project--reverse">
+      <div class="pf-project__images">
+        <div class="pf-project__track">
+          <img src="img/portafolio/p13_1.jpg" alt="Encuadernación" loading="lazy">
+          <img src="img/portafolio/p13_2.jpg" alt="Encuadernación" loading="lazy">
+          <img src="img/portafolio/p13_3.jpg" alt="Encuadernación" loading="lazy">
         </div>
       </div>
-      <div class="pf-slide__text">
-        <p class="pf-slide__eyebrow">Taller Tundra · Bogotá · Ene–Abr 2026</p>
-        <h2 class="pf-slide__title">Encuadernación artesanal</h2>
-        <p class="pf-slide__desc">Taller de 3 módulos: plegado de papel, encuadernación e intervención de imágenes. Caballete, japonesa, costura francesa y acordeón.</p>
+      <div class="pf-project__text">
+        <p class="pf-project__eyebrow">Taller Tundra · Bogotá · Ene–Abr 2026</p>
+        <h2 class="pf-project__title">Encuadernación artesanal</h2>
+        <p class="pf-project__desc">Plegado de papel, encuadernación e intervención de imágenes. Caballete, japonesa, costura francesa y acordeón.</p>
       </div>
     </section>
 
-    <!-- SLIDE 7: COLLAGES -->
-    <section class="pf-slide" data-slide="7">
-      <div class="pf-slide__images">
-        <img src="img/portafolio/p14_1.jpg" alt="Collages" class="pf-slide__img active" data-img="0">
+    <!-- 7: COLLAGES -->
+    <section class="pf-project">
+      <div class="pf-project__images">
+        <div class="pf-project__track pf-project__track--single">
+          <img src="img/portafolio/p14_1.jpg" alt="Collages" loading="lazy">
+        </div>
       </div>
-      <div class="pf-slide__text">
-        <p class="pf-slide__eyebrow">Práctica continua · +3 años</p>
-        <h2 class="pf-slide__title">Creación de collages</h2>
-        <p class="pf-slide__desc">La práctica del collage en papel me ha permitido explorar la intuición y el subconsciente como fuentes creativas legítimas de conocimiento. Ha potenciado mi bienestar emocional al permitir la expresión libre y sin censura de ideas e historias que habitan mi cabeza.</p>
+      <div class="pf-project__text">
+        <p class="pf-project__eyebrow">Práctica continua · +3 años</p>
+        <h2 class="pf-project__title">Creación de collages</h2>
+        <p class="pf-project__desc">La práctica del collage en papel como fuente creativa de conocimiento. Exploración de la intuición y el subconsciente, expresión libre de ideas e historias.</p>
       </div>
     </section>
 
   </main>
 
-  <!-- SLIDE NAV -->
-  <div class="pf-nav">
-    <button class="pf-nav__arrow pf-nav__arrow--prev" id="prevSlide" onclick="goSlide(currentSlide-1)">‹</button>
-    <div class="pf-nav__counter"><span id="slideNum">1</span> / <span id="slideTotal">8</span></div>
-    <button class="pf-nav__arrow pf-nav__arrow--next" id="nextSlide" onclick="goSlide(currentSlide+1)">›</button>
-  </div>
+  <footer class="footer">
+    <p class="footer__copy">© 2026 <span class="footer__brand">Asante Sana</span></p>
+    <p class="footer__credit">Web por <a href="https://kathiuska.com" target="_blank">Kathiuska Studio</a></p>
+  </footer>
 
   <script>
-    // Hamburger
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
     if(hamburger) hamburger.addEventListener('click', ()=>{ hamburger.classList.toggle('active'); navLinks.classList.toggle('open'); });
 
-    // Carousel
-    const slides = document.querySelectorAll('.pf-slide');
-    let currentSlide = 0;
-    const total = slides.length;
-    document.getElementById('slideTotal').textContent = total;
+    // Reveal on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.pf-project').forEach(el => observer.observe(el));
 
-    function goSlide(n) {
-      if(n < 0 || n >= total) return;
-      slides[currentSlide].classList.remove('active');
-      currentSlide = n;
-      slides[currentSlide].classList.add('active');
-      document.getElementById('slideNum').textContent = n + 1;
-      document.getElementById('prevSlide').style.opacity = n === 0 ? '0.3' : '1';
-      document.getElementById('nextSlide').style.opacity = n === total-1 ? '0.3' : '1';
-    }
-
-    // Image sub-carousel within slides
-    function goImg(btn, idx) {
-      const slide = btn.closest('.pf-slide');
-      slide.querySelectorAll('.pf-slide__img').forEach(img => img.classList.remove('active'));
-      slide.querySelectorAll('.pf-img-dot').forEach(d => d.classList.remove('active'));
-      slide.querySelector(`.pf-slide__img[data-img="${idx}"]`).classList.add('active');
-      btn.classList.add('active');
-    }
-
-    // Keyboard nav
-    document.addEventListener('keydown', e => {
-      if(e.key === 'ArrowRight' || e.key === 'ArrowDown') goSlide(currentSlide+1);
-      if(e.key === 'ArrowLeft' || e.key === 'ArrowUp') goSlide(currentSlide-1);
+    // Horizontal drag scroll for image tracks
+    document.querySelectorAll('.pf-project__track').forEach(track => {
+      let isDown = false, startX, scrollLeft;
+      track.addEventListener('mousedown', e => { isDown = true; track.style.cursor = 'grabbing'; startX = e.pageX - track.offsetLeft; scrollLeft = track.scrollLeft; });
+      track.addEventListener('mouseleave', () => { isDown = false; track.style.cursor = 'grab'; });
+      track.addEventListener('mouseup', () => { isDown = false; track.style.cursor = 'grab'; });
+      track.addEventListener('mousemove', e => { if(!isDown) return; e.preventDefault(); const x = e.pageX - track.offsetLeft; track.scrollLeft = scrollLeft - (x - startX) * 1.5; });
     });
-
-    // Scroll/swipe
-    let touchY = 0;
-    document.addEventListener('touchstart', e => touchY = e.touches[0].clientY);
-    document.addEventListener('touchend', e => {
-      const diff = touchY - e.changedTouches[0].clientY;
-      if(Math.abs(diff) > 50) diff > 0 ? goSlide(currentSlide+1) : goSlide(currentSlide-1);
-    });
-
-    // Mouse wheel
-    let wheelLock = false;
-    document.addEventListener('wheel', e => {
-      if(wheelLock) return;
-      wheelLock = true;
-      if(e.deltaY > 30) goSlide(currentSlide+1);
-      else if(e.deltaY < -30) goSlide(currentSlide-1);
-      setTimeout(()=> wheelLock = false, 800);
-    });
-
-    goSlide(0);
   </script>
 </body>
 </html>

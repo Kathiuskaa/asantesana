@@ -1,42 +1,27 @@
-/* ========== PORTFOLIO CAROUSEL ========== */
+/* ========== PORTFOLIO — SCROLL LAYOUT ========== */
 .pf-body {
   background: var(--color-cream);
-  overflow: hidden;
-  height: 100vh;
 }
 
-/* Slides */
-.pf-carousel {
-  position: relative;
-  width: 100%;
+/* Hero */
+.pf-hero {
   height: 100vh;
-}
-.pf-slide {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.6s ease;
-}
-.pf-slide.active {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-/* Intro slide */
-.pf-slide--intro {
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-items: center;
-}
-.pf-slide__text-full {
-  max-width: 600px;
+  justify-content: center;
   text-align: center;
   padding: 2rem;
 }
-.pf-slide__hero-title {
+.pf-hero__eyebrow {
+  font-family: var(--font-detail);
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-terracotta);
+  margin-bottom: 1rem;
+}
+.pf-hero__title {
   font-family: var(--font-display);
   font-size: clamp(2.5rem, 6vw, 4.5rem);
   font-weight: 700;
@@ -44,163 +29,129 @@
   line-height: 1.1;
   margin-bottom: 1.5rem;
 }
-.pf-slide__hero-desc {
+.pf-hero__desc {
   font-family: var(--font-body);
   font-size: 1rem;
   line-height: 1.7;
   color: var(--color-text-light);
-  margin-bottom: 2rem;
+  max-width: 520px;
   font-style: italic;
 }
-.pf-slide__start {
-  font-family: var(--font-detail);
-  font-size: 0.75rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
+.pf-hero__scroll {
+  margin-top: 2.5rem;
+  font-size: 1.4rem;
   color: var(--color-terracotta);
-  background: none;
-  border: 1px solid var(--color-terracotta);
-  padding: 0.7rem 2rem;
-  cursor: pointer;
-  transition: all 0.3s;
+  animation: pf-bounce 2s ease infinite;
 }
-.pf-slide__start:hover {
-  background: var(--color-terracotta);
-  color: var(--color-cream);
+@keyframes pf-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
 }
 
-/* Image area */
-.pf-slide__images {
-  position: relative;
-  overflow: hidden;
-  height: 100vh;
+/* Main */
+.pf-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem 4rem;
 }
-.pf-slide__img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+
+/* Project sections */
+.pf-project {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 2.5rem;
+  align-items: center;
+  padding: 4rem 0;
+  border-bottom: 1px solid rgba(61,74,42,0.08);
   opacity: 0;
-  transition: opacity 0.5s ease;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
 }
-.pf-slide__img.active {
+.pf-project.visible {
   opacity: 1;
+  transform: translateY(0);
 }
-.pf-slide__img-nav {
-  position: absolute;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
+.pf-project:last-child { border-bottom: none; }
+.pf-project--reverse {
+  grid-template-columns: 0.7fr 1.3fr;
+  direction: rtl;
+}
+.pf-project--reverse > * { direction: ltr; }
+
+/* Image track — horizontal scroll strip */
+.pf-project__images {
+  overflow: hidden;
+  border-radius: 8px;
+}
+.pf-project__track {
   display: flex;
-  gap: 0.5rem;
-  z-index: 2;
+  gap: 0.6rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  cursor: grab;
+  -webkit-overflow-scrolling: touch;
 }
-.pf-img-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  border: 1.5px solid rgba(255,255,255,0.7);
-  background: transparent;
-  cursor: pointer;
-  transition: all 0.3s;
-  padding: 0;
+.pf-project__track::-webkit-scrollbar { display: none; }
+.pf-project__track img {
+  flex: 0 0 85%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 6px;
+  scroll-snap-align: start;
+  transition: filter 0.3s;
 }
-.pf-img-dot.active {
-  background: white;
-  border-color: white;
+.pf-project__track img:hover {
+  filter: brightness(1.05);
+}
+.pf-project__track--single img {
+  flex: 0 0 100%;
 }
 
-/* Text area */
-.pf-slide__text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 4rem 3rem 4rem 2.5rem;
-  height: 100vh;
+/* Text */
+.pf-project__text {
+  padding: 1rem 0;
 }
-.pf-slide__eyebrow {
+.pf-project__eyebrow {
   font-family: var(--font-detail);
   font-size: 0.68rem;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--color-terracotta);
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.6rem;
 }
-.pf-slide__title {
+.pf-project__title {
   font-family: var(--font-display);
-  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
   font-weight: 600;
   color: var(--color-olive);
-  line-height: 1.15;
-  margin-bottom: 1.2rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
 }
-.pf-slide__desc {
+.pf-project__desc {
   font-family: var(--font-body);
   font-size: 0.88rem;
   line-height: 1.7;
   color: var(--color-text-light);
   text-align: justify;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
 }
-.pf-slide__meta {
+.pf-project__meta {
   font-family: var(--font-detail);
   font-size: 0.72rem;
   letter-spacing: 0.08em;
   color: var(--color-terracotta);
   font-style: italic;
-  margin-top: 0.5rem;
 }
 
-/* Bottom nav */
-.pf-nav {
-  position: fixed;
-  bottom: 2rem;
-  right: 3rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  z-index: 100;
-}
-.pf-nav__arrow {
-  background: none;
-  border: 1px solid var(--color-olive);
-  color: var(--color-olive);
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  font-size: 1.2rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s;
-  padding: 0;
-  line-height: 1;
-}
-.pf-nav__arrow:hover {
-  background: var(--color-olive);
-  color: var(--color-cream);
-}
-.pf-nav__counter {
-  font-family: var(--font-detail);
-  font-size: 0.72rem;
-  letter-spacing: 0.1em;
-  color: var(--color-text-light);
-}
-
-/* ========== RESPONSIVE ========== */
+/* Responsive */
 @media (max-width: 768px) {
-  .pf-slide {
+  .pf-project, .pf-project--reverse {
     grid-template-columns: 1fr;
-    grid-template-rows: 55vh auto;
+    direction: ltr;
+    gap: 1.2rem;
+    padding: 2.5rem 0;
   }
-  .pf-slide__images { height: 55vh; }
-  .pf-slide__text {
-    height: auto;
-    padding: 1.5rem 1.5rem 5rem;
-    justify-content: flex-start;
-  }
-  .pf-nav { right: 50%; transform: translateX(50%); }
-  .pf-slide__text-full { padding: 6rem 1.5rem 2rem; }
+  .pf-project__track img { height: 280px; flex: 0 0 80%; }
+  .pf-main { padding: 0 1.2rem 3rem; }
 }
