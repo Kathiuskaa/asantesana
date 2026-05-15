@@ -6,7 +6,7 @@
 
 /* HERO — full-screen vertical section */
 .pf-hero {
-  height: 100vh;
+  height: 65vh;
   display: flex;
   flex-direction: column;
   align-items: center;
