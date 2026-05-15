@@ -1,11 +1,57 @@
-/* ========== PORTFOLIO — HORIZONTAL SCROLL ========== */
+/* ========== PORTFOLIO — HERO + HORIZONTAL CAROUSEL ========== */
 .pf-body {
   background: var(--color-cream);
-  overflow: hidden;
-  height: 100vh;
+  overflow-x: hidden;
 }
 
-/* Horizontal scroll container */
+/* HERO — full-screen vertical section */
+.pf-hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 3rem;
+  background: var(--color-olive);
+}
+.pf-hero__eyebrow {
+  font-family: var(--font-detail);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(245,240,230,0.6);
+  margin-bottom: 0.8rem;
+}
+.pf-hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: var(--color-cream);
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+.pf-hero__desc {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: rgba(245,240,230,0.7);
+  max-width: 420px;
+  font-style: italic;
+}
+.pf-hero__scroll {
+  margin-top: 1.5rem;
+  font-size: 1.4rem;
+  color: rgba(245,240,230,0.4);
+  cursor: pointer;
+  animation: pf-bounce 2s ease infinite;
+}
+@keyframes pf-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+/* HORIZONTAL CAROUSEL */
 .pf-hscroll {
   display: flex;
   height: 100vh;
@@ -22,53 +68,6 @@
   flex: 0 0 auto;
   height: 100vh;
   scroll-snap-align: start;
-}
-
-/* Hero panel — compact */
-.pf-panel--hero {
-  width: 45vw;
-  min-width: 360px;
-  background: var(--color-olive);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 2rem 3rem;
-}
-.pf-hero__eyebrow {
-  font-family: var(--font-detail);
-  font-size: 0.65rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: rgba(245,240,230,0.6);
-  margin-bottom: 0.8rem;
-}
-.pf-hero__title {
-  font-family: var(--font-display);
-  font-size: clamp(1.8rem, 4vw, 3rem);
-  font-weight: 700;
-  color: var(--color-cream);
-  line-height: 1.1;
-  margin-bottom: 1rem;
-}
-.pf-hero__desc {
-  font-family: var(--font-body);
-  font-size: 0.88rem;
-  line-height: 1.65;
-  color: rgba(245,240,230,0.7);
-  max-width: 380px;
-  font-style: italic;
-}
-.pf-hero__scroll {
-  margin-top: 1.5rem;
-  font-size: 1.4rem;
-  color: rgba(245,240,230,0.4);
-  animation: pf-nudge 2s ease infinite;
-}
-@keyframes pf-nudge {
-  0%, 100% { transform: translateX(0); }
-  50% { transform: translateX(8px); }
 }
 
 /* Project panels */
@@ -160,7 +159,7 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-  .pf-panel--hero { width: 100vw; padding: 2rem 1.5rem; }
+  .pf-hero { padding: 2rem 1.5rem; }
   .pf-panel--project {
     width: 90vw;
     min-width: auto;

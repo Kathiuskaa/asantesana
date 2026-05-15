@@ -25,16 +25,16 @@
     <div class="nav__hamburger" id="hamburger" aria-label="Abrir menú"><span></span><span></span><span></span></div>
   </nav>
 
-  <!-- HORIZONTAL SCROLL WRAPPER -->
-  <div class="pf-hscroll" id="pfScroll">
+  <!-- HERO — normal vertical scroll -->
+  <header class="pf-hero" id="pfHero">
+    <p class="pf-hero__eyebrow">Práctica creativa</p>
+    <h1 class="pf-hero__title">Papel, collage<br>y memoria</h1>
+    <p class="pf-hero__desc">Mi práctica explora cómo los objetos editoriales pueden convertirse en espacios donde las historias personales encuentran forma, archivo y memoria.</p>
+    <div class="pf-hero__scroll">↓</div>
+  </header>
 
-    <!-- PANEL 0: Hero -->
-    <section class="pf-panel pf-panel--hero">
-      <p class="pf-hero__eyebrow">Práctica creativa</p>
-      <h1 class="pf-hero__title">Papel, collage<br>y memoria</h1>
-      <p class="pf-hero__desc">Mi práctica explora cómo los objetos editoriales pueden convertirse en espacios donde las historias personales encuentran forma, archivo y memoria.</p>
-      <div class="pf-hero__scroll">→</div>
-    </section>
+  <!-- HORIZONTAL CAROUSEL — after hero -->
+  <div class="pf-hscroll" id="pfScroll">
 
     <!-- PANEL 1 -->
     <section class="pf-panel pf-panel--project">
@@ -148,7 +148,7 @@
     const navLinks = document.getElementById('navLinks');
     if(hamburger) hamburger.addEventListener('click', ()=>{ hamburger.classList.toggle('active'); navLinks.classList.toggle('open'); });
 
-    // Horizontal scroll: convert vertical wheel to horizontal movement
+    // Horizontal scroll: convert vertical wheel to horizontal inside the carousel
     const scroller = document.getElementById('pfScroll');
     scroller.addEventListener('wheel', (e) => {
       if(Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
@@ -157,7 +157,7 @@
       }
     }, { passive: false });
 
-    // Touch swipe support
+    // Touch swipe
     let touchStartX = 0;
     scroller.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
     scroller.addEventListener('touchmove', e => {
@@ -166,10 +166,15 @@
       touchStartX = e.touches[0].clientX;
     }, { passive: true });
 
-    // Keyboard arrows
+    // Keyboard
     document.addEventListener('keydown', e => {
       if(e.key === 'ArrowRight') scroller.scrollBy({ left: 400, behavior: 'smooth' });
       if(e.key === 'ArrowLeft') scroller.scrollBy({ left: -400, behavior: 'smooth' });
+    });
+
+    // Smooth scroll from hero to carousel
+    document.querySelector('.pf-hero__scroll').addEventListener('click', () => {
+      scroller.scrollIntoView({ behavior: 'smooth' });
     });
   </script>
 </body>
