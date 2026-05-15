@@ -89,6 +89,11 @@
 }
 .cv-col--main { }
 .cv-col--side { }
+.cv-subgrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 1.5rem;
+}
 
 /* ========== CV SECTIONS ========== */
 .cv-section {
@@ -257,4 +262,5 @@
   .cv-header__contact { flex-direction: column; gap: 0.2rem; }
   .cv-header__contact span:nth-child(even) { display: none; }
   .cv-langs { flex-wrap: wrap; }
+  .cv-subgrid { grid-template-columns: 1fr; }
 }
