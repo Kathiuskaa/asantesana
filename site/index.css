@@ -424,6 +424,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   display: inline-block;
   font-family: var(--font-detail);
   font-size: 0.82rem;
+  font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--color-terracotta);
