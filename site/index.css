@@ -652,12 +652,27 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-size: clamp(1.2rem, 2.4vw, 1.55rem);
   line-height: 1.8;
   color: var(--color-olive);
-  margin-bottom: 2rem;
-  font-style: italic;
+  margin-bottom: 1.5rem;
+  font-style: normal;
   text-wrap: balance;
+  text-align: justify;
 }
-.testimonial__quote::before { content: '\201C'; font-size: 1.5em; vertical-align: -0.15em; margin-right: 0.1em; color: var(--color-terracotta); }
-.testimonial__quote::after { content: '\201D'; font-size: 1.5em; vertical-align: -0.15em; margin-left: 0.1em; color: var(--color-terracotta); }
+.testimonial__quote::before, .testimonial__quote::after { content: none; }
+.testimonial__org {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-olive);
+  margin-bottom: 0.3rem;
+}
+.testimonial__role {
+  font-family: var(--font-detail);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-terracotta);
+  margin-bottom: 1rem;
+}
 .testimonial__author {
   font-family: var(--font-detail);
   font-size: 0.82rem;
