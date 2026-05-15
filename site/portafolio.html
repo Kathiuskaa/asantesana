@@ -149,6 +149,12 @@
 
   </div>
 
+  <!-- Fixed nav arrows -->
+  <div class="pf-nav" id="pfNav">
+    <button onclick="document.getElementById('pfScroll').scrollBy({left:-window.innerWidth, behavior:'smooth'})" aria-label="Anterior">←</button>
+    <button onclick="document.getElementById('pfScroll').scrollBy({left:window.innerWidth, behavior:'smooth'})" aria-label="Siguiente">→</button>
+  </div>
+
   <script>
     // Hamburger
     const hamburger = document.getElementById('hamburger');

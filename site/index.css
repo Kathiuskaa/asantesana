@@ -243,7 +243,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   width: min(420px, 70vw);
   margin-bottom: 1.2rem;
   animation: fadeUp 1.2s var(--transition) both;
-  filter: brightness(0) invert(1);
+  filter: brightness(0) invert(1) sepia(0.12) saturate(0.6);
 }
 .hero__tagline {
   font-family: var(--font-detail);

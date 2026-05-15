@@ -20,7 +20,7 @@
   font-size: 0.65rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(245,240,230,0.6);
+  color: var(--color-cream);
   margin-bottom: 0.8rem;
 }
 .pf-hero__title {
@@ -35,15 +35,17 @@
   font-family: var(--font-body);
   font-size: 0.9rem;
   line-height: 1.65;
-  color: rgba(245,240,230,0.7);
+  color: var(--color-cream);
   max-width: 420px;
   font-style: italic;
+  opacity: 0.75;
 }
 .pf-hero__scroll {
   margin-top: 1.5rem;
-  font-size: 1.4rem;
-  color: rgba(245,240,230,0.4);
+  font-size: 1.6rem;
+  color: var(--color-cream);
   cursor: pointer;
+  opacity: 0.6;
   animation: pf-bounce 2s ease infinite;
 }
 @keyframes pf-bounce {
@@ -104,17 +106,46 @@
 .pf-panel__arrow {
   margin-top: 1.5rem;
   font-family: var(--font-detail);
-  font-size: 0.6rem;
+  font-size: 0.65rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(61,74,42,0.3);
+  color: rgba(61,74,42,0.35);
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 .pf-panel__arrow span {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   animation: pf-nudge 2s ease infinite;
+}
+
+/* Fixed nav arrows */
+.pf-nav {
+  position: fixed;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.pf-nav button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(61,74,42,0.2);
+  background: rgba(245,240,232,0.85);
+  color: var(--color-olive);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  backdrop-filter: blur(8px);
+}
+.pf-nav button:hover {
+  background: var(--color-olive);
+  color: var(--color-cream);
+  border-color: var(--color-olive);
 }
 @keyframes pf-nudge {
   0%, 100% { transform: translateX(0); }
@@ -122,26 +153,27 @@
 }
 .pf-panel__eyebrow {
   font-family: var(--font-detail);
-  font-size: 0.6rem;
+  font-size: 0.7rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--color-terracotta);
-  margin-bottom: 0.5rem;
-  opacity: 0.8;
+  margin-bottom: 0.6rem;
+  opacity: 0.85;
 }
 .pf-panel__title {
   font-family: var(--font-display);
-  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
   font-weight: 400;
   color: var(--color-olive);
   line-height: 1.2;
-  margin-bottom: 0.8rem;
+  margin-bottom: 1rem;
 }
 .pf-panel__desc {
   font-family: var(--font-body);
-  font-size: 0.8rem;
-  line-height: 1.7;
+  font-size: 0.95rem;
+  line-height: 1.75;
   color: var(--color-text-light);
+  text-wrap: pretty;
 }
 
 /* Image-only panels */
