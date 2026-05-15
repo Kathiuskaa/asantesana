@@ -665,7 +665,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .mc-header { display:flex; align-items:flex-start; gap:1rem; cursor:pointer; user-select:none; }
 .mc-num { font-family:var(--font-detail); font-size:10px; letter-spacing:0.12em; color:var(--color-terracotta); padding-top:5px; min-width:22px; font-weight:500; }
 .mc-titles { flex:1; }
-.mc-title { font-family:var(--font-display); font-size:1.1rem; font-weight:500; color:var(--color-olive); margin-bottom:0.25rem; }
+.mc-title { font-family:var(--font-display); font-size:1.1rem; font-weight:500; color:var(--color-terracotta); margin-bottom:0.25rem; }
 .mc-hook { font-family:var(--font-body); font-size:0.8rem; color:var(--color-text-light); font-style:italic; line-height:1.5; }
 .mc-toggle { font-size:18px; color:var(--color-terracotta); transition:transform 0.3s; padding-top:3px; font-weight:300; }
 .mc-card.open .mc-toggle { transform:rotate(45deg); }
