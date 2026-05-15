@@ -1,0 +1,198 @@
+/* ========== PORTAFOLIO PAGE ========== */
+.portafolio-page { background: var(--color-cream); }
+
+/* ========== HERO ========== */
+.pf-hero {
+  padding: 9rem 2rem 3rem;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.pf-hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 700;
+  color: var(--color-olive);
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+.pf-hero__intro {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-text-light);
+  font-style: italic;
+}
+
+/* ========== MAIN ========== */
+.pf-main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem 4rem;
+}
+
+/* ========== SECTIONS ========== */
+.pf-section {
+  margin-bottom: 5rem;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid rgba(61,74,42,0.08);
+}
+.pf-section:last-child { border-bottom: none; }
+
+.pf-section__header {
+  margin-bottom: 1.5rem;
+}
+.pf-section__label {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+  font-weight: 600;
+  color: var(--color-olive);
+  margin-bottom: 0.4rem;
+}
+.pf-section__meta {
+  font-family: var(--font-detail);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-terracotta);
+}
+.pf-section__body {
+  max-width: 750px;
+  margin-bottom: 2rem;
+}
+.pf-section__body p {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--color-text);
+  margin-bottom: 0.8rem;
+}
+.pf-section__body p:last-child { margin-bottom: 0; }
+.pf-section__participants {
+  font-family: var(--font-detail) !important;
+  font-size: 0.78rem !important;
+  letter-spacing: 0.06em;
+  color: var(--color-terracotta) !important;
+  font-style: italic;
+}
+
+/* ========== GALLERIES ========== */
+.pf-gallery {
+  display: grid;
+  gap: 0.8rem;
+}
+.pf-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+  transition: transform 0.4s ease, filter 0.4s ease;
+  cursor: pointer;
+}
+.pf-gallery img:hover {
+  filter: brightness(1.05);
+}
+
+/* Mixed: landscape photos grid */
+.pf-gallery--mixed {
+  grid-template-columns: repeat(3, 1fr);
+}
+.pf-gallery--mixed img {
+  aspect-ratio: 4/3;
+}
+
+/* Portrait photos grid */
+.pf-gallery--portrait {
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+.pf-gallery--portrait img {
+  aspect-ratio: 3/4;
+}
+
+/* Wide/panoramic single */
+.pf-gallery--wide {
+  grid-template-columns: 1fr;
+}
+.pf-gallery--wide img {
+  aspect-ratio: 21/10;
+  border-radius: 8px;
+}
+
+/* ========== PROJECT LINKS ========== */
+.pf-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.pf-link {
+  display: block;
+  text-decoration: none;
+  padding: 1.2rem 1.5rem;
+  border: 1px solid rgba(61,74,42,0.12);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+.pf-link:hover {
+  border-color: var(--color-terracotta);
+  background: rgba(200,112,58,0.03);
+  transform: translateX(4px);
+}
+.pf-link__title {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-olive);
+  margin-bottom: 0.3rem;
+}
+.pf-link__desc {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  color: var(--color-text-light);
+  line-height: 1.5;
+}
+
+/* ========== LIGHTBOX ========== */
+.pf-lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.92);
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+}
+.pf-lightbox.active { display: flex; }
+.pf-lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 4px;
+}
+.pf-lightbox__close {
+  position: absolute;
+  top: 1.5rem; right: 1.5rem;
+  background: none; border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  line-height: 1;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+.pf-lightbox__close:hover { opacity: 1; }
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .pf-hero { padding: 7rem 1.5rem 2rem; }
+  .pf-main { padding: 0 1.2rem 3rem; }
+  .pf-gallery--mixed { grid-template-columns: repeat(2, 1fr); }
+  .pf-gallery--portrait { grid-template-columns: repeat(2, 1fr); }
+  .pf-section { margin-bottom: 3rem; padding-bottom: 2.5rem; }
+}
+@media (max-width: 480px) {
+  .pf-gallery--mixed { grid-template-columns: 1fr; }
+  .pf-gallery--portrait { grid-template-columns: repeat(2, 1fr); }
+}

@@ -1,0 +1,538 @@
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap');
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  .as-page {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    color: var(--color-text-primary);
+    background: transparent;
+    padding: 2.5rem 0;
+    max-width: 680px;
+  }
+
+  .as-intro {
+    border-left: 1px solid var(--color-border-primary);
+    padding-left: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .as-intro-label {
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-text-tertiary);
+    margin-bottom: 0.75rem;
+    font-weight: 400;
+  }
+
+  .as-intro-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    line-height: 1.65;
+    font-weight: 300;
+    color: var(--color-text-primary);
+  }
+
+  .as-intro-sub {
+    margin-top: 0.85rem;
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+    font-weight: 300;
+  }
+
+  .as-divider {
+    width: 32px;
+    height: 1px;
+    background: var(--color-border-secondary);
+    margin: 2.5rem 0;
+  }
+
+  .as-card {
+    border-top: 0.5px solid var(--color-border-tertiary);
+    padding: 2rem 0 2rem 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .as-card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .as-card-num {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    color: var(--color-text-tertiary);
+    font-weight: 400;
+    padding-top: 4px;
+    min-width: 20px;
+  }
+
+  .as-card-titles {
+    flex: 1;
+  }
+
+  .as-card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--color-text-primary);
+    margin-bottom: 0.35rem;
+  }
+
+  .as-card-hook {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+    line-height: 1.55;
+    font-style: italic;
+    font-weight: 300;
+  }
+
+  .as-card-toggle {
+    font-size: 18px;
+    color: var(--color-text-tertiary);
+    transition: transform 0.3s ease;
+    padding-top: 2px;
+  }
+
+  .as-card-toggle.open {
+    transform: rotate(45deg);
+  }
+
+  .as-card-body {
+    display: none;
+    padding-left: calc(20px + 1rem);
+  }
+
+  .as-card-body.open {
+    display: block;
+  }
+
+  .as-card-for {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-text-tertiary);
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+  }
+
+  .as-card-desc {
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--color-text-secondary);
+    margin-bottom: 1.25rem;
+    font-weight: 300;
+  }
+
+  .as-card-desc em {
+    color: var(--color-text-primary);
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  .as-method-label {
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--color-text-tertiary);
+    font-weight: 400;
+    margin-bottom: 0.75rem;
+    margin-top: 1.25rem;
+  }
+
+  .as-method-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .as-step {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+  }
+
+  .as-step-dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--color-border-secondary);
+    margin-top: 7px;
+    flex-shrink: 0;
+  }
+
+  .as-ventaja-label {
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--color-text-tertiary);
+    font-weight: 400;
+    margin-bottom: 0.75rem;
+    margin-top: 1.25rem;
+  }
+
+  .as-ventajas {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .as-ventaja {
+    font-size: 13px;
+    line-height: 1.65;
+    color: var(--color-text-secondary);
+    padding-left: 1rem;
+    border-left: 1px solid var(--color-border-tertiary);
+    font-weight: 300;
+  }
+
+  .as-card-cta {
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 0.5px solid var(--color-border-tertiary);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .as-price {
+    font-size: 12px;
+    color: var(--color-text-tertiary);
+    font-weight: 300;
+  }
+
+  .as-price strong {
+    font-size: 14px;
+    color: var(--color-text-primary);
+    font-weight: 500;
+  }
+
+  .as-btn {
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: var(--color-text-primary);
+    background: transparent;
+    border: 0.5px solid var(--color-border-secondary);
+    padding: 8px 18px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-radius: 0;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .as-btn:hover {
+    background: var(--color-background-secondary);
+  }
+
+  .as-highlight-box {
+    background: var(--color-background-secondary);
+    border-left: 2px solid var(--color-border-secondary);
+    padding: 1rem 1.25rem;
+    margin: 1rem 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    font-style: italic;
+    line-height: 1.65;
+    color: var(--color-text-primary);
+    font-weight: 300;
+  }
+
+  .as-tag-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .as-tag {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-text-tertiary);
+    border: 0.5px solid var(--color-border-tertiary);
+    padding: 3px 8px;
+    font-weight: 400;
+    border-radius: 0;
+  }
+
+  .as-proceso-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 1rem 0 1.5rem;
+  }
+
+  .as-proceso-step {
+    padding: 0.85rem 1rem;
+    border: 0.5px solid var(--color-border-tertiary);
+  }
+
+  .as-proceso-step-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 0.4rem;
+    color: var(--color-text-primary);
+  }
+
+  .as-proceso-step-text {
+    font-size: 11px;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    font-weight: 300;
+  }
+</style>
+
+<div class="as-page">
+  <div class="as-intro">
+    <p class="as-intro-label">Cómo trabajo</p>
+    <p class="as-intro-text">Cada proceso comienza con una conversación. A partir de ahí construyo una propuesta específica: no hay paquetes estándar porque no hay proyectos estándar.</p>
+    <p class="as-intro-sub">Lo que sí es constante: escucha real al inicio, estructura clara durante el proceso, y un entregable concreto al final. Trabajo sola o con equipos pequeños dentro de organizaciones. No con muchos clientes a la vez.</p>
+  </div>
+
+  <div id="cards-container"></div>
+
+  <div style="border-top: 0.5px solid var(--color-border-tertiary); padding-top: 2rem; margin-top: 1rem;">
+    <p style="font-size: 13px; color: var(--color-text-secondary); line-height: 1.75; font-weight: 300;">¿No sabes cuál de estos caminos corresponde a lo que necesitas? <span style="color: var(--color-text-primary); font-weight: 400;">Escríbeme.</span> Prefiero una conversación antes de cualquier propuesta formal.</p>
+    <div style="margin-top: 1rem;">
+      <a href="mailto:hola@asantesana.co" class="as-btn">hola@asantesana.co</a>
+    </div>
+  </div>
+</div>
+
+<script>
+const services = [
+  {
+    num: "01",
+    title: "Comunicación estratégica para organizaciones",
+    hook: "Lo que una organización hace merece ser comunicado con la misma precisión con que lo hace.",
+    para: "Para <em>fundaciones, museos, instituciones científicas y organizaciones culturales</em> que necesitan comunicar lo que hacen con coherencia y criterio.",
+    desc: "Trabajo el posicionamiento institucional, la narrativa de programas y proyectos, el relacionamiento con aliados, medios y sector, y la construcción de mensajes que no pierden profundidad al volverse accesibles. El resultado es un sistema editorial que la organización puede sostener y escalar.",
+    tags: ["Posicionamiento", "Narrativa", "Relacionamiento", "Estrategia editorial"],
+    metodologia: [
+      "Diagnóstico: revisión de lo existente, identificación de brechas y oportunidades narrativas.",
+      "Definición de mensajes clave, tono y arquitectura de contenidos.",
+      "Diseño de la estrategia editorial: qué, cuándo, dónde, por qué.",
+      "Acompañamiento en implementación y construcción de capacidades internas."
+    ],
+    ventajas: [
+      "He liderado la estrategia de comunicación de los Premios Nacionales de Ciencias y Solidaridad (FAAE) y diseñado la primera estrategia digital del Museo de Arte Moderno de Medellín.",
+      "Mi formación en periodismo narrativo me permite construir mensajes que no sacrifican profundidad por accesibilidad.",
+      "El resultado no es una campaña. Es un sistema que la organización puede sostener sola."
+    ],
+    cta: "consultar disponibilidad",
+    price: null
+  },
+  {
+    num: "02",
+    title: "Gestión del conocimiento y memoria institucional",
+    hook: "Muchas organizaciones tienen décadas de trabajo sin relato propio. Eso tiene solución.",
+    para: "Para <em>organizaciones con mucho que decir y poca estructura para decirlo</em>: archivos sin consulta, publicaciones sin terminar, memorias que existen solo en la cabeza de las personas.",
+    desc: "Ayudo a organizar archivos, construir memorias institucionales, diseñar estrategias editoriales y estructurar publicaciones que traduzcan el trabajo de una organización en narrativa coherente. El resultado es un sistema que puede sostenerse sin depender de mí.",
+    tags: ["Archivo", "Memoria institucional", "Publicaciones", "Sistema editorial"],
+    metodologia: [
+      "Revisión y diagnóstico del material existente: documentos, registros, archivos físicos y digitales.",
+      "Definición de la estructura narrativa y los criterios editoriales del archivo o publicación.",
+      "Organización, edición y diseño del sistema de gestión documental.",
+      "Entrega de un sistema funcional con criterios claros para su mantenimiento."
+    ],
+    ventajas: [
+      "Integro experiencia en investigación —desde trabajo de grado transmedia hasta campo en Uganda— con una mirada editorial formada en producción cultural.",
+      "Sé leer lo que no está escrito: lo que una institución ha hecho pero no ha nombrado todavía.",
+      "Trabajo con la misma atención que le doy a un libro de artista: cada pieza de archivo tiene un lugar y una función."
+    ],
+    cta: "consultar disponibilidad",
+    price: null
+  },
+  {
+    num: "03",
+    title: "Metodologías creativas para equipos y comunidades",
+    hook: "Diseño procesos donde el conocimiento no se transmite: se construye, y termina en algo que se puede tocar.",
+    para: "Para <em>organizaciones que necesitan procesos donde el resultado tiene forma física</em>: talleres, residencias, procesos con comunidades o equipos.",
+    desc: "Diseño metodologías que integran la escritura, el trabajo manual, la conversación estructurada y la creación de objetos editoriales. El objeto —la libreta, el libro, el archivo físico— no es un souvenir del proceso. Es parte del método.",
+    tags: ["Facilitación", "Diseño metodológico", "Objetos editoriales", "Comunidades"],
+    metodologia: [
+      "Diseño de la metodología completa según el contexto, las personas y los objetivos del proceso.",
+      "Facilitación de las sesiones: conversación estructurada, escritura y trabajo con las manos.",
+      "Producción de los objetos editoriales que el proceso requiera: libretas, libros, archivos colectivos.",
+      "Documentación del proceso y sus resultados."
+    ],
+    ventajas: [
+      "He facilitado este tipo de procesos con mujeres narradoras en Mompox, con comunidades afro en Medellín, con niños en Uganda y con equipos en instituciones culturales en Colombia.",
+      "Sé adaptar el método al contexto: lo mismo que funciona en una residencia artística puede adaptarse a un proceso de formación institucional.",
+      "Los objetos que produzco para el proceso no son materiales de apoyo. Son dispositivos de conocimiento."
+    ],
+    cta: "consultar disponibilidad",
+    price: null
+  },
+  {
+    num: "04",
+    title: "Acompañamiento al proceso creativo individual",
+    hook: "No es terapia ni coaching. Es trabajo creativo real, con alguien que también crea.",
+    para: "Para <em>artistas, gestoras culturales y creadoras</em> que quieren darle continuidad, estructura y comunicabilidad a su práctica.",
+    desc: "Un proceso sostenido de 9 a 12 sesiones que combina revisión del archivo personal, creación con las manos y trabajo sobre la narrativa propia. Cada proceso es distinto porque cada práctica lo es.",
+    tags: ["Individual", "Proceso sostenido", "Práctica artística", "Narrativa"],
+    proceso: [
+      { title: "Adentro", text: "Revisión del archivo personal. Reconocimiento de la historia. Creación de un libro de artista como herramienta de documentación." },
+      { title: "Afuera", text: "¿Qué quiero compartir y con quién? Exploración de referentes. Inicio de una serie de piezas. Construcción del lenguaje visual propio." },
+      { title: "El universo", text: "Integración. Narración íntima de la práctica. Escritura y definición de los próximos pasos." }
+    ],
+    ventajas: [
+      "Trabajo con materiales reales: papel, collage, encuadernación. No solo con palabras.",
+      "Tengo una práctica artística propia que informa mi lectura de la tuya: sé lo que es sostener un proceso creativo desde adentro.",
+      "El proceso cierra con algo concreto en las manos: un libro, un archivo, una serie. No solo con claridad."
+    ],
+    highlight: "Cada proceso es único. El objeto que lo documenta también.",
+    cta: "escribirme para comenzar",
+    price: "Desde $1.800.000 COP · proceso completo (9–12 sesiones)"
+  },
+  {
+    num: "05",
+    title: "Hacer para pensar",
+    hook: "El papel, el collage y el libro de artista no son el resultado del proceso. Son el método.",
+    para: "Para <em>artistas, creadoras e instituciones</em> que necesitan objetos editoriales hechos a mano como parte de un proceso creativo, pedagógico o institucional.",
+    desc: "Trabajo con papel fabricado desde la fibra, collage y encuadernación artesanal. Cada objeto tiene una función dentro del proceso que lo originó: libreta, libro de artista, publicación a mano. No es un souvenir. Es un dispositivo de trabajo.",
+    tags: ["Papel hecho a mano", "Collage", "Encuadernación", "Objetos editoriales"],
+    metodologia: [
+      "Conversación inicial para entender la función del objeto dentro del proceso.",
+      "Definición del formato, materialidad y escala: qué tipo de objeto, en qué cantidad.",
+      "Fabricación artesanal: papel desde la fibra, encuadernación, intervención de imágenes.",
+      "Entrega con documentación del proceso de fabricación cuando el proceso lo requiere."
+    ],
+    ventajas: [
+      "Cada pieza es única. No hay dos iguales porque no hay dos procesos iguales.",
+      "La misma persona que diseña el objeto entiende el proceso para el que fue creado.",
+      "Lo que llega a tus manos tiene historia material: saber de dónde viene la fibra cambia la manera de usarlo."
+    ],
+    highlight: "No fabrico objetos en serie. Fabrico objetos para procesos específicos.",
+    cta: "escribirme para cotizar",
+    price: "Desde $120.000 COP por unidad · series de 10 o más"
+  },
+  {
+    num: "06",
+    title: "Escuchar lo que no está en los documentos",
+    hook: "Los archivos oficiales guardan lo que se decidió conservar. Me interesa lo demás.",
+    para: "Para <em>proyectos de investigación, residencias y procesos creativos</em> que trabajan con memoria, identidad y narrativa desde las márgenes.",
+    desc: "Me interesa lo que los archivos oficiales no guardan: genealogías íntimas, saberes orales, narrativas que las mujeres construyen sobre su propia experiencia. He trabajado este territorio en residencias, talleres y proyectos propios en Mompox, Medellín, Uganda y Bogotá.",
+    tags: ["Memoria", "Investigación", "Narrativa", "Mujeres"],
+    metodologia: [
+      "Escucha activa y diseño de dispositivos de registro adaptados al contexto.",
+      "Trabajo con comunidades o de forma individual para dar forma a las historias.",
+      "Creación de objetos editoriales que sostienen y devuelven el proceso a quienes participaron.",
+      "Documentación que respeta la intimidad de lo que se compartió."
+    ],
+    ventajas: [
+      "Saber leer lo que no está escrito es una habilidad que sirve tanto en un taller comunitario como en el diseño de una estrategia institucional.",
+      "He trabajado en tres continentes con personas que no comparten mi idioma ni mis referencias: eso afina la escucha.",
+      "Mi práctica artística y mi investigación se alimentan mutuamente: lo que aprendo en campo aparece en los objetos que fabrico."
+    ],
+    highlight: "Este trabajo no produce informes. Produce objetos y narrativas que la comunidad puede reconocer como propios.",
+    cta: "conversar sobre el proyecto",
+    price: null
+  }
+];
+
+const container = document.getElementById('cards-container');
+
+services.forEach((s, i) => {
+  const card = document.createElement('div');
+  card.className = 'as-card';
+
+  let bodyHTML = `
+    <div class="as-card-for">Para quién</div>
+    <p class="as-card-desc">${s.para}</p>
+    <p class="as-card-desc">${s.desc}</p>
+  `;
+
+  if (s.tags) {
+    bodyHTML += `<div class="as-tag-row">${s.tags.map(t => `<span class="as-tag">${t}</span>`).join('')}</div>`;
+  }
+
+  if (s.proceso) {
+    bodyHTML += `<div class="as-method-label">El proceso</div>
+    <div class="as-proceso-steps">
+      ${s.proceso.map(p => `
+        <div class="as-proceso-step">
+          <div class="as-proceso-step-title">${p.title}</div>
+          <div class="as-proceso-step-text">${p.text}</div>
+        </div>
+      `).join('')}
+    </div>`;
+  }
+
+  if (s.metodologia) {
+    bodyHTML += `<div class="as-method-label">Cómo lo hago</div>
+    <div class="as-method-steps">
+      ${s.metodologia.map(m => `
+        <div class="as-step">
+          <div class="as-step-dot"></div>
+          <span>${m}</span>
+        </div>
+      `).join('')}
+    </div>`;
+  }
+
+  if (s.ventajas) {
+    bodyHTML += `<div class="as-ventaja-label">Por qué conmigo</div>
+    <div class="as-ventajas">
+      ${s.ventajas.map(v => `<div class="as-ventaja">${v}</div>`).join('')}
+    </div>`;
+  }
+
+  if (s.highlight) {
+    bodyHTML += `<div class="as-highlight-box">${s.highlight}</div>`;
+  }
+
+  bodyHTML += `<div class="as-card-cta">
+    <span class="as-price">${s.price ? `Inversión: <strong>${s.price}</strong>` : 'Cotización personalizada según alcance y contexto.'}</span>
+    <button class="as-btn" onclick="sendPrompt('Quiero saber más sobre: ${s.title}')">${s.cta} ↗</button>
+  </div>`;
+
+  card.innerHTML = `
+    <div class="as-card-header" onclick="toggleCard(${i})">
+      <span class="as-card-num">${s.num}</span>
+      <div class="as-card-titles">
+        <div class="as-card-title">${s.title}</div>
+        <div class="as-card-hook">${s.hook}</div>
+      </div>
+      <span class="as-card-toggle" id="toggle-${i}">+</span>
+    </div>
+    <div class="as-card-body" id="body-${i}">
+      ${bodyHTML}
+    </div>
+  `;
+
+  container.appendChild(card);
+});
+
+function toggleCard(i) {
+  const body = document.getElementById('body-' + i);
+  const toggle = document.getElementById('toggle-' + i);
+  const isOpen = body.classList.contains('open');
+  body.classList.toggle('open', !isOpen);
+  toggle.classList.toggle('open', !isOpen);
+  toggle.textContent = isOpen ? '+' : '×';
+}
+</script>
