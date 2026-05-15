@@ -194,25 +194,33 @@
       ctx.lineCap = 'round';
       ctx.lineJoin = 'round';
 
-      // Draw with smooth quadratic curves + tapering
+      // Draw with smooth quadratic curves + tapering + sway
       for (let i = 1; i < pts.length; i++) {
         const t = i / total;
         const taper = root.thickness * (1 - t * 0.85);
         const segOpacity = root.opacity * fadeIn * (1 - t * 0.3);
 
+        // Subtle sway: increases toward tips
+        const swayAmt = growDone ? Math.sin(elapsed * 0.8 + i * 0.3 + root.delay * 20) * t * 2.5 : 0;
+        const swayX = Math.cos(elapsed * 0.5 + i * 0.5) * swayAmt;
+        const swayY = Math.sin(elapsed * 0.6 + i * 0.4) * swayAmt * 0.6;
+
         ctx.beginPath();
         if (i === 1) {
           ctx.moveTo(pts[0].x, pts[0].y);
-          ctx.lineTo(pts[1].x, pts[1].y);
+          ctx.lineTo(pts[1].x + swayX, pts[1].y + swayY);
         } else {
           // Smooth curve using midpoints
           const prev = pts[i - 2];
           const curr = pts[i - 1];
           const next = pts[i];
-          const mx = (curr.x + next.x) / 2;
-          const my = (curr.y + next.y) / 2;
-          ctx.moveTo((prev.x + curr.x) / 2, (prev.y + curr.y) / 2);
-          ctx.quadraticCurveTo(curr.x, curr.y, mx, my);
+          const prevSway = growDone ? Math.sin(elapsed * 0.8 + (i-1) * 0.3 + root.delay * 20) * ((i-1)/total) * 2.5 : 0;
+          const prevSwayX = Math.cos(elapsed * 0.5 + (i-1) * 0.5) * prevSway;
+          const prevSwayY = Math.sin(elapsed * 0.6 + (i-1) * 0.4) * prevSway * 0.6;
+          const mx = (curr.x + prevSwayX + next.x + swayX) / 2;
+          const my = (curr.y + prevSwayY + next.y + swayY) / 2;
+          ctx.moveTo((prev.x + curr.x + prevSwayX) / 2, (prev.y + curr.y + prevSwayY) / 2);
+          ctx.quadraticCurveTo(curr.x + prevSwayX, curr.y + prevSwayY, mx, my);
         }
         ctx.strokeStyle = `rgba(245, 240, 232, ${segOpacity})`;
         ctx.lineWidth = Math.max(0.3, taper);
