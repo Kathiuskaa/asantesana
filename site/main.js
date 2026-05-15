@@ -233,7 +233,7 @@
         const prev = pts[pts.length - 2];
         const tipAngle = Math.atan2(tip.y - prev.y, tip.x - prev.x);
         const baseLeafSize = 3 + root.thickness * 1.2;
-        const leafPulse = growDone ? 1 + Math.sin(elapsed * 0.9 + root.delay * 25) * 0.35 : 1;
+        const leafPulse = growDone ? 1 + Math.sin(elapsed * 0.9 + root.delay * 25) * 0.7 : 1;
         const leafSize = baseLeafSize * leafPulse;
         const leafAlpha = root.opacity * fadeIn * Math.min(1, (progress - 0.85) / 0.15);
 
