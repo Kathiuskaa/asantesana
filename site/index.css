@@ -75,6 +75,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   align-items: center;
   transition: background 0.6s ease, box-shadow 0.6s ease;
   background: transparent;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 .nav.scrolled {
   background: rgba(245, 240, 232, 0.95);
