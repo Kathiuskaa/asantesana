@@ -215,7 +215,7 @@
     if(s.ventajas) body += `<p class="mc-label">Por qué conmigo</p><div class="mc-ventajas">${s.ventajas.map(v=>`<div class="mc-ventaja">${v}</div>`).join('')}</div>`;
     if(s.highlight) body += `<div class="mc-highlight">${s.highlight}</div>`;
     if(s.price) body += `<p class="mc-price-text">Inversión: <strong>${s.price}</strong></p>`;
-    card.innerHTML = `<div class="mc-header" onclick="this.parentElement.classList.toggle('open')"><img src="img/icons/espiral.png" class="mc-icon" alt=""><div class="mc-titles"><div class="mc-title">${s.title}</div><div class="mc-hook">${s.hook}</div></div><span class="mc-toggle">+</span></div><div class="mc-body">${body}</div>`;
+    card.innerHTML = `<div class="mc-header" onclick="this.parentElement.classList.toggle('open')"><img src="img/icons/bullet.png" class="mc-icon" alt=""><div class="mc-titles"><div class="mc-title">${s.title}</div><div class="mc-hook">${s.hook}</div></div><span class="mc-toggle">+</span></div><div class="mc-body">${body}</div>`;
     mc.appendChild(card);
   });
   </script>
