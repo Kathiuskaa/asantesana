@@ -676,6 +676,24 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .mc-step { display:flex; gap:0.7rem; align-items:flex-start; font-family:var(--font-body); font-size:0.8rem; line-height:1.6; color:var(--color-text-light); }
 .mc-dot { width:5px; height:5px; border-radius:50%; background:var(--color-terracotta); margin-top:6px; flex-shrink:0; }
 .mc-price { font-family:var(--font-detail); font-size:0.78rem; color:var(--color-olive); font-weight:500; letter-spacing:0.03em; }
+.mc-for { font-family:var(--font-body); font-size:0.82rem; line-height:1.6; color:var(--color-text-light); margin-bottom:0.6rem; }
+.mc-for em { color:var(--color-olive); font-style:normal; font-weight:400; }
+.mc-tags { display:flex; flex-wrap:wrap; gap:0.3rem; margin-bottom:1rem; }
+.mc-tag { font-family:var(--font-detail); font-size:9px; letter-spacing:0.1em; text-transform:uppercase; color:var(--color-text-light); border:0.5px solid rgba(61,74,42,0.2); padding:3px 8px; }
+.mc-label { font-family:var(--font-detail); font-size:9px; letter-spacing:0.16em; text-transform:uppercase; color:var(--color-terracotta); margin-bottom:0.5rem; margin-top:1rem; font-weight:500; }
+.mc-ventajas { display:flex; flex-direction:column; gap:0.5rem; margin-bottom:1rem; }
+.mc-ventaja { font-family:var(--font-body); font-size:0.8rem; line-height:1.6; color:var(--color-text-light); padding-left:0.8rem; border-left:1px solid rgba(61,74,42,0.12); }
+.mc-highlight { background:rgba(61,74,42,0.04); border-left:2px solid var(--color-terracotta); padding:0.8rem 1rem; margin:1rem 0; font-family:var(--font-display); font-size:0.88rem; font-style:italic; line-height:1.6; color:var(--color-olive); }
+.mc-proceso { display:grid; grid-template-columns:repeat(3,1fr); gap:0.8rem; margin-bottom:1rem; }
+.mc-proceso-item { border:0.5px solid rgba(61,74,42,0.12); padding:0.7rem; }
+.mc-proceso-item strong { display:block; font-family:var(--font-display); font-size:0.85rem; font-weight:400; color:var(--color-olive); margin-bottom:0.3rem; }
+.mc-proceso-item span { font-family:var(--font-body); font-size:0.75rem; line-height:1.5; color:var(--color-text-light); }
+.mc-cta { margin-top:1.2rem; padding-top:1rem; border-top:0.5px solid rgba(61,74,42,0.1); display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.6rem; }
+.mc-price-text { font-family:var(--font-body); font-size:0.78rem; color:var(--color-text-light); }
+.mc-price-text strong { color:var(--color-olive); font-weight:500; }
+.mc-cta-btn { font-family:var(--font-detail); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--color-terracotta); border:0.5px solid var(--color-terracotta); padding:6px 14px; text-decoration:none; transition:all 0.2s; border-radius:3px; }
+.mc-cta-btn:hover { background:var(--color-terracotta); color:var(--color-cream); }
+@media(max-width:768px) { .mc-proceso { grid-template-columns:1fr; } }
 
 
 /* ========== TESTIMONIALS ========== */
