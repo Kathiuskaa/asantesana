@@ -33,6 +33,13 @@
   padding: 2rem 2rem;
   background: var(--color-olive);
 }
+.pf-hero__icon {
+  width: 60px;
+  height: auto;
+  margin-bottom: 1rem;
+  filter: brightness(0) invert(1) sepia(0.1) saturate(0.5);
+  opacity: 0.8;
+}
 .pf-hero__eyebrow {
   font-family: var(--font-detail);
   font-size: 0.8rem;
