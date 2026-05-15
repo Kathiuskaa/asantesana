@@ -201,7 +201,7 @@
         const segOpacity = root.opacity * fadeIn * (1 - t * 0.3);
 
         // Subtle sway: increases toward tips
-        const swayAmt = growDone ? Math.sin(elapsed * 0.8 + i * 0.3 + root.delay * 20) * t * 2.5 : 0;
+        const swayAmt = growDone ? Math.sin(elapsed * 0.8 + i * 0.3 + root.delay * 20) * t * 5 : 0;
         const swayX = Math.cos(elapsed * 0.5 + i * 0.5) * swayAmt;
         const swayY = Math.sin(elapsed * 0.6 + i * 0.4) * swayAmt * 0.6;
 
