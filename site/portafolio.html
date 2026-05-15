@@ -163,8 +163,14 @@
 
     // Horizontal scroll: convert vertical wheel to horizontal inside the carousel
     const scroller = document.getElementById('pfScroll');
+    const hero = document.getElementById('pfHero');
     scroller.addEventListener('wheel', (e) => {
       if(Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+        // If scrolling up and at the beginning, go back to hero
+        if(e.deltaY < 0 && scroller.scrollLeft <= 5) {
+          hero.scrollIntoView({ behavior: 'smooth' });
+          return;
+        }
         e.preventDefault();
         scroller.scrollLeft += e.deltaY;
       }
