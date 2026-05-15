@@ -1,158 +1,174 @@
-/* ========== PORTFOLIO — SCROLL LAYOUT ========== */
+/* ========== PORTFOLIO — HORIZONTAL SCROLL ========== */
 .pf-body {
   background: var(--color-cream);
+  overflow: hidden;
+  height: 100vh;
 }
 
-/* Hero */
-.pf-hero {
+/* Horizontal scroll container */
+.pf-hscroll {
+  display: flex;
   height: 100vh;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.pf-hscroll::-webkit-scrollbar { display: none; }
+
+/* Panels */
+.pf-panel {
+  flex: 0 0 auto;
+  height: 100vh;
+  scroll-snap-align: start;
+}
+
+/* Hero panel — compact */
+.pf-panel--hero {
+  width: 45vw;
+  min-width: 360px;
+  background: var(--color-olive);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 2rem;
-  background: var(--color-olive);
+  padding: 2rem 3rem;
 }
 .pf-hero__eyebrow {
   font-family: var(--font-detail);
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(245,240,230,0.7);
-  margin-bottom: 1rem;
+  color: rgba(245,240,230,0.6);
+  margin-bottom: 0.8rem;
 }
 .pf-hero__title {
   font-family: var(--font-display);
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-size: clamp(1.8rem, 4vw, 3rem);
   font-weight: 700;
   color: var(--color-cream);
   line-height: 1.1;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 .pf-hero__desc {
   font-family: var(--font-body);
-  font-size: 1rem;
-  line-height: 1.7;
-  color: rgba(245,240,230,0.75);
-  max-width: 520px;
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: rgba(245,240,230,0.7);
+  max-width: 380px;
   font-style: italic;
 }
 .pf-hero__scroll {
-  margin-top: 2.5rem;
+  margin-top: 1.5rem;
   font-size: 1.4rem;
-  color: rgba(245,240,230,0.5);
-  animation: pf-bounce 2s ease infinite;
+  color: rgba(245,240,230,0.4);
+  animation: pf-nudge 2s ease infinite;
 }
-@keyframes pf-bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(8px); }
-}
-
-/* Main */
-.pf-main {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem 4rem;
+@keyframes pf-nudge {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(8px); }
 }
 
-/* Project sections */
-.pf-project {
+/* Project panels */
+.pf-panel--project {
+  width: 70vw;
+  min-width: 500px;
+  max-width: 900px;
   display: grid;
-  grid-template-columns: 1.3fr 0.7fr;
-  gap: 2.5rem;
-  align-items: center;
-  padding: 4rem 0;
-  border-bottom: 1px solid rgba(61,74,42,0.08);
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  grid-template-columns: 1.4fr 0.6fr;
+  gap: 0;
 }
-.pf-project.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.pf-project:last-child { border-bottom: none; }
-.pf-project--reverse {
-  grid-template-columns: 0.7fr 1.3fr;
-  direction: rtl;
-}
-.pf-project--reverse > * { direction: ltr; }
-
-/* Image track — horizontal scroll strip */
-.pf-project__images {
+.pf-panel__img {
+  height: 100vh;
   overflow: hidden;
-  border-radius: 8px;
 }
-.pf-project__track {
-  display: flex;
-  gap: 0.6rem;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: none;
-  cursor: grab;
-  -webkit-overflow-scrolling: touch;
-}
-.pf-project__track::-webkit-scrollbar { display: none; }
-.pf-project__track img {
-  flex: 0 0 85%;
-  height: 420px;
+.pf-panel__img img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border-radius: 6px;
-  scroll-snap-align: start;
-  transition: filter 0.3s;
 }
-.pf-project__track img:hover {
-  filter: brightness(1.05);
+.pf-panel__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem 2rem;
+  background: var(--color-cream);
 }
-.pf-project__track--single img {
-  flex: 0 0 100%;
-}
-
-/* Text */
-.pf-project__text {
-  padding: 1rem 0;
-}
-.pf-project__eyebrow {
+.pf-panel__eyebrow {
   font-family: var(--font-detail);
-  font-size: 0.68rem;
+  font-size: 0.6rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--color-terracotta);
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.5rem;
+  opacity: 0.8;
 }
-.pf-project__title {
+.pf-panel__title {
   font-family: var(--font-display);
-  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
-  font-weight: 600;
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  font-weight: 400;
   color: var(--color-olive);
   line-height: 1.2;
-  margin-bottom: 1rem;
-}
-.pf-project__desc {
-  font-family: var(--font-body);
-  font-size: 0.88rem;
-  line-height: 1.7;
-  color: var(--color-text-light);
-  text-align: justify;
   margin-bottom: 0.8rem;
 }
-.pf-project__meta {
+.pf-panel__desc {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  line-height: 1.7;
+  color: var(--color-text-light);
+}
+
+/* Image-only panels */
+.pf-panel--img-only {
+  width: 50vw;
+  min-width: 350px;
+  max-width: 650px;
+}
+.pf-panel--img-only img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* End panel */
+.pf-panel--end {
+  width: 30vw;
+  min-width: 250px;
+  background: var(--color-olive);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pf-end__back {
   font-family: var(--font-detail);
   font-size: 0.72rem;
-  letter-spacing: 0.08em;
-  color: var(--color-terracotta);
-  font-style: italic;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(245,240,230,0.7);
+  text-decoration: none;
+  border-bottom: 0.5px solid rgba(245,240,230,0.3);
+  padding-bottom: 0.2rem;
+  transition: all 0.3s;
+}
+.pf-end__back:hover {
+  color: var(--color-cream);
+  border-bottom-color: var(--color-cream);
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .pf-project, .pf-project--reverse {
+  .pf-panel--hero { width: 100vw; padding: 2rem 1.5rem; }
+  .pf-panel--project {
+    width: 90vw;
+    min-width: auto;
     grid-template-columns: 1fr;
-    direction: ltr;
-    gap: 1.2rem;
-    padding: 2.5rem 0;
+    grid-template-rows: 55vh auto;
   }
-  .pf-project__track img { height: 280px; flex: 0 0 80%; }
-  .pf-main { padding: 0 1.2rem 3rem; }
+  .pf-panel__img { height: 55vh; }
+  .pf-panel__text { padding: 1.5rem; }
+  .pf-panel--img-only { width: 85vw; min-width: auto; }
+  .pf-panel--end { width: 80vw; min-width: auto; }
 }
