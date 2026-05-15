@@ -616,6 +616,24 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .icon-strip img:hover { opacity: 0.7; filter: grayscale(0%); transform: scale(1.1) rotate(-3deg); }
 
+.services__btn {
+  display: inline-block;
+  font-family: var(--font-detail);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-cream);
+  text-decoration: none;
+  border: 1px solid rgba(245,240,230,0.4);
+  padding: 0.75rem 2rem;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+.services__btn:hover {
+  background: var(--color-cream);
+  color: var(--color-olive);
+}
+
 /* ========== TESTIMONIALS ========== */
 #testimonios {
   background: var(--color-cream);
