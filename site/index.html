@@ -212,12 +212,11 @@
     const card = document.createElement('div');
     card.className = 'mc-card';
     let body = `<p class="mc-for">${s.para}</p><p class="mc-desc">${s.desc}</p>`;
-    if(s.tags) body += `<div class="mc-tags">${s.tags.map(t=>`<span class="mc-tag">${t}</span>`).join('')}</div>`;
     if(s.proceso) body += `<p class="mc-label">El proceso</p><div class="mc-proceso">${s.proceso.map(p=>`<div class="mc-proceso-item"><strong>${p.t}</strong><span>${p.d}</span></div>`).join('')}</div>`;
     if(s.met) body += `<p class="mc-label">Cómo lo hago</p><div class="mc-steps">${s.met.map(m=>`<div class="mc-step"><span class="mc-dot"></span><span>${m}</span></div>`).join('')}</div>`;
     if(s.ventajas) body += `<p class="mc-label">Por qué conmigo</p><div class="mc-ventajas">${s.ventajas.map(v=>`<div class="mc-ventaja">${v}</div>`).join('')}</div>`;
     if(s.highlight) body += `<div class="mc-highlight">${s.highlight}</div>`;
-    body += `<div class="mc-cta"><span class="mc-price-text">${s.price?`Inversión: <strong>${s.price}</strong>`:'Cotización personalizada según alcance y contexto.'}</span><a href="mailto:stefaniaramirezgutierrez@gmail.com?subject=Consulta: ${s.title}" class="mc-cta-btn">${s.cta} ↗</a></div>`;
+    if(s.price) body += `<p class="mc-price-text">Inversión: <strong>${s.price}</strong></p>`;
     card.innerHTML = `<div class="mc-header" onclick="this.parentElement.classList.toggle('open')"><span class="mc-num">${s.num}</span><div class="mc-titles"><div class="mc-title">${s.title}</div><div class="mc-hook">${s.hook}</div></div><span class="mc-toggle">+</span></div><div class="mc-body">${body}</div>`;
     mc.appendChild(card);
   });
