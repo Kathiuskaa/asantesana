@@ -643,14 +643,14 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 #testimonios .section__title {
   color: var(--color-olive);
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
 }
 .testimonials__wrapper {
   max-width: 700px;
   margin: 0 auto;
   text-align: center;
   position: relative;
-  min-height: 320px;
+  min-height: 240px;
 }
 .testimonial {
   position: absolute;
@@ -701,7 +701,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   display: flex;
   justify-content: center;
   gap: 1rem;
-  margin-top: 1.5rem;
+  margin-top: 0.5rem;
 }
 .testimonials__dot {
   width: 9px; height: 9px;
