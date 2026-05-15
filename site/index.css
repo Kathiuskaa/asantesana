@@ -1036,7 +1036,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .footer__message {
   font-family: var(--font-body);
-  font-size: 0.7rem;
+  font-size: 0.6rem;
   line-height: 1.6;
   color: var(--color-terracotta);
   opacity: 0.6;
