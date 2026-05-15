@@ -632,7 +632,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   margin: 0 auto;
   text-align: center;
   position: relative;
-  min-height: 260px;
+  min-height: 320px;
 }
 .testimonial {
   position: absolute;
@@ -648,13 +648,12 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   pointer-events: auto;
 }
 .testimonial__quote {
-  font-family: var(--font-display);
-  font-size: clamp(1.2rem, 2.4vw, 1.55rem);
-  line-height: 1.8;
-  color: var(--color-olive);
-  margin-bottom: 1.5rem;
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--color-text-light);
+  margin-bottom: 1rem;
   font-style: normal;
-  text-wrap: balance;
   text-align: justify;
 }
 .testimonial__quote::before, .testimonial__quote::after { content: none; }
