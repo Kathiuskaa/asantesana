@@ -87,7 +87,7 @@
         <div class="service-card reveal"><img src="img/icons/Iconografia-09.png" alt="" class="service-card__icon"><h3 class="service-card__title">Escuchar lo que no está en los documentos</h3><p class="service-card__desc">Los archivos oficiales guardan lo que se decidió conservar. Me interesa lo demás.</p><div class="service-card__line"></div></div>
       </div>
       <div class="services__cta reveal" style="text-align:center; margin-top:2.5rem;">
-        <a href="acompa%C3%B1amientos.html" class="services__btn">Conoce mis acompañamientos →</a>
+        <button onclick="document.getElementById('acompModal').classList.add('active')" class="services__btn">Conoce mis acompañamientos →</button>
       </div>
     </div>
   </section>
@@ -180,6 +180,45 @@
     <p class="footer__copy">© 2026 <span class="footer__brand">Asante Sana</span></p>
     <p class="footer__credit">Web por <a href="https://kathiuska.com" target="_blank">Kathiuska Studio</a></p>
   </footer>
+  <!-- ====== ACOMPAÑAMIENTOS MODAL ====== -->
+  <div class="acomp-modal" id="acompModal">
+    <div class="acomp-modal__backdrop" onclick="document.getElementById('acompModal').classList.remove('active')"></div>
+    <div class="acomp-modal__content">
+      <button class="acomp-modal__close" onclick="document.getElementById('acompModal').classList.remove('active')">×</button>
+      <div class="acomp-modal__intro">
+        <p class="acomp-modal__label">Cómo trabajo</p>
+        <p class="acomp-modal__text">Cada proceso comienza con una conversación. A partir de ahí construyo una propuesta específica: no hay paquetes estándar porque no hay proyectos estándar.</p>
+        <p class="acomp-modal__sub">Lo que sí es constante: escucha real al inicio, estructura clara durante el proceso, y un entregable concreto al final.</p>
+      </div>
+      <div id="modalCards"></div>
+      <div class="acomp-modal__footer">
+        <p>¿No sabes cuál de estos caminos corresponde a lo que necesitas? <strong>Escríbeme.</strong></p>
+        <a href="mailto:stefaniaramirezgutierrez@gmail.com" class="acomp-modal__btn">hola@asantesana.co ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  // Modal cards
+  const mServices = [
+    {num:"01",title:"Comunicación estratégica para organizaciones",hook:"Lo que una organización hace merece ser comunicado con la misma precisión con que lo hace.",desc:"Trabajo el posicionamiento institucional, la narrativa de programas y proyectos, y la construcción de mensajes que no pierden profundidad al volverse accesibles.",met:["Diagnóstico: revisión de lo existente, identificación de brechas.","Definición de mensajes clave, tono y arquitectura de contenidos.","Diseño de la estrategia editorial.","Acompañamiento en implementación."]},
+    {num:"02",title:"Gestión del conocimiento y memoria institucional",hook:"Muchas organizaciones tienen décadas de trabajo sin relato propio. Eso tiene solución.",desc:"Ayudo a organizar archivos, construir memorias institucionales y estructurar publicaciones que traduzcan el trabajo en narrativa coherente.",met:["Revisión y diagnóstico del material existente.","Definición de la estructura narrativa y criterios editoriales.","Organización, edición y diseño del sistema documental.","Entrega de un sistema funcional con criterios de mantenimiento."]},
+    {num:"03",title:"Metodologías creativas para equipos y comunidades",hook:"Diseño procesos donde el conocimiento no se transmite: se construye.",desc:"Diseño metodologías que integran escritura, trabajo manual, conversación estructurada y creación de objetos editoriales.",met:["Diseño de la metodología según contexto y objetivos.","Facilitación: conversación, escritura y trabajo con las manos.","Producción de objetos editoriales del proceso.","Documentación del proceso y sus resultados."]},
+    {num:"04",title:"Acompañamiento al proceso creativo individual",hook:"No es terapia ni coaching. Es trabajo creativo real, con alguien que también crea.",desc:"Un proceso sostenido de 9 a 12 sesiones que combina revisión del archivo personal, creación con las manos y trabajo sobre la narrativa propia.",met:["Adentro: revisión del archivo personal, libro de artista.","Afuera: exploración de referentes, construcción del lenguaje visual.","El universo: integración, narración y próximos pasos."],price:"Desde $1.800.000 COP · 9–12 sesiones"},
+    {num:"05",title:"Hacer para pensar",hook:"El papel, el collage y el libro de artista no son el resultado del proceso. Son el método.",desc:"Trabajo con papel fabricado desde la fibra, collage y encuadernación artesanal. Cada objeto tiene una función dentro del proceso que lo originó.",met:["Conversación para entender la función del objeto.","Definición de formato, materialidad y escala.","Fabricación artesanal.","Entrega con documentación del proceso."],price:"Desde $120.000 COP por unidad"},
+    {num:"06",title:"Escuchar lo que no está en los documentos",hook:"Los archivos oficiales guardan lo que se decidió conservar. Me interesa lo demás.",desc:"Me interesa lo que los archivos oficiales no guardan: genealogías íntimas, saberes orales, narrativas que las mujeres construyen sobre su propia experiencia.",met:["Escucha activa y diseño de dispositivos de registro.","Trabajo con comunidades para dar forma a las historias.","Creación de objetos editoriales que devuelven el proceso.","Documentación respetuosa."]}
+  ];
+  const mc = document.getElementById('modalCards');
+  mServices.forEach((s,i) => {
+    const card = document.createElement('div');
+    card.className = 'mc-card';
+    let body = `<p class="mc-desc">${s.desc}</p><div class="mc-steps">${s.met.map(m=>`<div class="mc-step"><span class="mc-dot"></span><span>${m}</span></div>`).join('')}</div>`;
+    if(s.price) body += `<p class="mc-price">${s.price}</p>`;
+    card.innerHTML = `<div class="mc-header" onclick="this.parentElement.classList.toggle('open')"><span class="mc-num">${s.num}</span><div class="mc-titles"><div class="mc-title">${s.title}</div><div class="mc-hook">${s.hook}</div></div><span class="mc-toggle">+</span></div><div class="mc-body">${body}</div>`;
+    mc.appendChild(card);
+  });
+  </script>
+
   <script src="main.js"></script>
 </body>
 </html>
