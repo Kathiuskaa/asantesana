@@ -12,40 +12,41 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 2rem 3rem;
+  padding: 2rem 2rem;
   background: var(--color-olive);
 }
 .pf-hero__eyebrow {
   font-family: var(--font-detail);
-  font-size: 0.65rem;
-  letter-spacing: 0.2em;
+  font-size: 0.8rem;
+  letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--color-cream);
-  margin-bottom: 0.8rem;
+  margin-bottom: 1.2rem;
+  opacity: 0.7;
 }
 .pf-hero__title {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-size: clamp(2.8rem, 7vw, 5rem);
   font-weight: 700;
   color: var(--color-cream);
-  line-height: 1.1;
-  margin-bottom: 1rem;
+  line-height: 1.05;
+  margin-bottom: 1.5rem;
 }
 .pf-hero__desc {
   font-family: var(--font-body);
-  font-size: 0.9rem;
-  line-height: 1.65;
+  font-size: 1.05rem;
+  line-height: 1.7;
   color: var(--color-cream);
-  max-width: 420px;
+  max-width: 500px;
   font-style: italic;
-  opacity: 0.75;
+  opacity: 0.7;
 }
 .pf-hero__scroll {
-  margin-top: 1.5rem;
-  font-size: 1.6rem;
+  margin-top: 2.5rem;
+  font-size: 1.8rem;
   color: var(--color-cream);
   cursor: pointer;
-  opacity: 0.6;
+  opacity: 0.5;
   animation: pf-bounce 2s ease infinite;
 }
 @keyframes pf-bounce {
